@@ -1,0 +1,439 @@
+{
+  "about": {
+    "name": "About",
+    "location": "content/about",
+    "path": "/about",
+    "content": "If you're curious about the website or the person behind it, you've reached the right place!\n\nYou can read more about me, i.e. the writer, creator, and owner of this site (that sounded a lot better in my head) at [`/about/me`](/about/me). I attempt to talk about myself in greater detail; the work I do, my interests, and hobbies. Eventually, when I find the time, I aim to add a timeline of important canon events in my life.\n\nYou can read about my thoughts on why I think this site is meaningful to me and my intents with it at [`/about/vaxitas`](/about/vaxitas). I've written this: \n\n- primarily for myself, \n- close ones with whom I can use this site as a means of communication, \n- and people who've stumbled upon this site and are keen on exploring it further.",
+    "metadata": {
+      "date": "2025-05-17T00:00:00Z",
+      "slug": "",
+      "categories": [],
+      "title": "About",
+      "summary": "Learn more about me, the purpose of this site, and how I intend to use it.",
+      "index": 3
+    },
+    "categories": [],
+    "artifacts": [
+      {
+        "name": "About Me",
+        "location": "content/about/me",
+        "path": "/about/me",
+        "content": "Hi hi, I'm Abhiram, but I also go by Abhi or *Ah-bee* (it's not the exact pronunciation but it's close enough and more accessible for my international friends). I'm a software developer by trade. What kind? Well, if I had to pick a niche, I'd say a [product engineer](https://posthog.com/blog/what-is-a-product-engineer). Currently, I'm working at [Sportskeeda](https://www.sportskeeda.com/).\n\n## Programming\n\n__START_PARA_WITH_SIDE_SECTION__\n\nTangentially, on the topic of craft, I consider myself to be a programmer and I love building quirky and/or meticulously crafted web UIs. At the time of writing, I occasionally find myself gravitating towards compilers and functional programming, so I'm trying to dedicate time to understand them better.\n\n__START_SECTION_HEADING__\nFP \u0026 Compilers\n__END_SECTION_HEADING__\n\n__START_SECTION_LIST__\n- [SICP](https://github.com/nrabhiram/sicp-exercises) - A collection of my solutions for exercises in this textbook, written in Racket\n- [Monkey](https://github.com/nrabhiram/monkey) - My (WIP) implementation of the Monkey language, as seen in the book, *Writing an Interpreter in Go*\n__END_SECTION_LIST__\n\nPreviously, I had a *game-dev* phase, during which I learned to use Unreal Engine for developing games, designing environments, and creating cinematic sequences. Attempting to build a full-blown Soulslike game greatly influenced my relation with projects and how I manage them.\n\n__START_SIDE_SECTION_HEADING__\nNotable work\n__END_SIDE_SECTION_HEADING__\n\n__START_SIDE_SECTION_LIST__\n- [Sapphire](https://github.com/nrabhiram/sapphire) - A bespoke site generator powered by Markdown content, written in Go and Svelte\n- Early contributor @ [Castmoney](https://devfolio.co/projects/castmoney-feed-cc53) - A social De-fi explorer for Farcaster, winner at the [Based India 2024](https://based-india.devfolio.co/overview) hackathon\n- [Kaamkar](https://github.com/nrabhiram/kaamkar) - A drag-and-drop kanban board for small projects, written in vanilla TS\n- [Infinite Blades](https://x.com/infiniteb42) - Soulslike built with Veekay, partnered with [ReadyPlayerMe](https://readyplayer.me/), received investor commitments, scrapped due to creative dissatisfaction. [Devlog playlist](https://youtube.com/playlist?list=PL-CCDBQjv4OsSQDF46JCaxsxXFZ7tqL7r\u0026si=ia84OkEh2kdr38Qx) here.\n- [Reality Marble](https://youtu.be/g7WdED8W0-0) - My rendition of [Archer's Unlimited Blade Works](https://typemoon.fandom.com/wiki/Unlimited_Blade_Works), made with Unreal\n- [Cinematics \u0026 environment art](https://youtube.com/playlist?list=PLHB0fdOUMX-3BFOQxV1vJPTAW4OsNEk5j\u0026si=xT3k8pCyasEOUP9o) - A bunch of stuff I made while learning how to design scenes in Unreal\n__END_SIDE_SECTION_LIST__\n__END_PARA_WITH_SIDE_SECTION__\n\n## Badminton\n__START_PARA_WITH_SIDE_SECTION__\n\nIn a past life, I was a professional badminton player. Yes, you heard that right. Yes, I know I don't look like I was ever an athlete. Thanks for that, you weren't hurtful at all. Let me take a look at my highlights so that I feel better.\n\n__START_IMAGE_GRID__\n![Districts prize presentation](./district.png)\n![Telangana State Formation Day prize presentation](./news-clipping.png)\n![Gulbarga Nationals](./gulbarga-nationals.png)\n![Drills during practice](./drill.png)\n![Hyderabad Nationals](./hyderabad-nationals-1.png)\n![Hyderabad Nationals](./hyderabad-nationals-2.png)\n![Friends in SG](./friends.png)\n__END_IMAGE_GRID__\n\n__START_SIDE_SECTION_HEADING__\nBadminton Highlights\n__END_SIDE_SECTION_HEADING__\n\n__START_SIDE_SECTION_LIST__\n- **Telangana State Championships BSU15** - 2nd runner-up\n- **Innagural Telangana State Formation Championships BSU15** - Winner (look Maa, I made it to the news)\n- **National rank in BSU15** - Top 10\n- **Best finish in a national tournament campaign** - QF exit in BDU15, beat a pair ranked in the top 3 on the way\n- **International outings** - Represented India in the *Jaya Raya Youth International* held in Jakarta, Indonesia. Participated in the *Chinese Swimming Club Invitational* series in Singapore\n- **Inter University South Zone** - I was part of a stacked roster after a grueling selection process. It's a team event, I was a reserve, and we lost in the round of 16. We had players who were nationally active, and also climbing up in the world rankings. So, we were bummed about the result.\n__END_SIDE_SECTION_LIST__\n__END_PARA_WITH_SIDE_SECTION__\n\nWh-what's that? Did I do well in Jakarta? No, I got walloped. Anyway, after the 10th grade, I quit playing badminton professionally. I had promised myself and my family that I'd pursue this career further only if I break into the top 4 in the country. I didn't, so, I decided to focus on my education instead. I think I still have a good relation with the sport. I consider myself to be a badminton hobbyist. I try to play around 3-4 times a week and I occasionally meet with my team from college to play and catch up.\n\n## Interests\n\nWhat do I like to do outside of work, programming, or badminton? I don't know, why are you such a busybody? N-no, you misheard me, I said that you seem like a busy person so I didn't want to waste your time talking about my hobbies. But it looks like you've got nowhere else to be, so here you go.\n\n### Music\n\n__START_PARA_WITH_SIDE_SECTION__\nI think the kind of music I like is quite bland, but I'm trying to venture out and explore music that's outside of my taste palette. I'm mostly into hip-hop. Huh? Who could have guessed? Why do you sound sarcastic? Urghhh, where was I? Oh yes, especially back in 12th grade, I was obsessed with the lore surrounding a creator more than their discography itself.\n\nListening to an album from start to finish is something that I'd never done before. It's really cool that some artists weave stories and experiences throughout their albums, but I'd never bothered to try. However, I'm making it a point to try new things. So, I decided to have a crack at it!\n\n__START_SECTION_HEADING__\nAlbums I'm listening to\n__END_SECTION_HEADING__\n\n__START_SECTION_LIST__\n- Saturation Trilogy by Brockhampton\n__END_SECTION_LIST__\n\n__START_SIDE_SECTION_HEADING__\nHiphop Lore Tidbits\n__END_SIDE_SECTION_HEADING__\n\n__START_SIDE_SECTION_LIST__\n- Did you know that [Merlin from Brockhampton was studying to be an architect](https://youtu.be/pDaFOSUxqrY?si=udrC4wCmsi6TwxMq)?\n- Or that [Lupe Fiasco](https://arts.mit.edu/people/lupe-fiasco/) taught a [course in MIT on rap theory](https://cmsw.mit.edu/video-lupe-fiasco-presents-rap-theory-practice-an-introduction/)?\n- Oh wait, how about this one? [Mac Miller (RIP) and Vince Staples were really good friends](https://youtu.be/jxoFX81v-60?si=10vWQxqVAtqrhjJ7). Mac produced the entirety of one of [Vince's earliest mixtapes](https://soundcloud.com/blacksmith-a-g/sets/stolen-youth), taught him more about music, brought him out on tours, and was super supportive of him during his come-up.\n- Mac's also made [appearances on Loiter Squad](https://youtu.be/D3CEbe3Xm-Q?si=cUcRahPMzW0XV3Vr), a show created by Odd Future.\n- Speaking of Odd Future, did you know that [Lionel went on to act in The Bear](https://www.imdb.com/name/nm5152633/?ref_=ttfc_fcr_cst_4)?\n__END_SIDE_SECTION_LIST__\n__END_PARA_WITH_SIDE_SECTION__\n\n### Movies\n\n__START_PARA_WITH_SIDE_SECTION__\nThis is a newfound hobby. I'm a homebody, but I tend to get bored sometimes. So, to switch things up, I now visit the theater if there's something playing that I find interesting. As a fun activity, I make a mental note of things I like or dislike about both the theater and home watching experience. Usually, I get my sister or a friend to accompany me. But, nowadays, I try to go alone sometimes, which is something I'd never done for the first 24 years of my life!\n\n__START_SECTION_HEADING__\nTheatre solo watch list\n__END_SECTION_HEADING__\n\n__START_SECTION_LIST__\n- **Sinners** - This was a rewatch. I had missed the opening sequence the first time. Unfortunately, I watched it in 4DX. I was prepared for incoming jumpscares but not the turbulence! This was my first horror, and second vampire film (after *Twilight*, I know, don't judge). I never imagined that I'd be intrigued by vampire fiction.\n- **Mission Impossible: The Final Reckoning** - This movie is what I imagine Michael Scott's (from *The Office*) \"Threat Level Midnight\" would look like if he had access to a Hollywood-level budget.\n__END_SECTION_LIST__\n\n__START_SIDE_SECTION_HEADING__\nAll-time favourite movies\n__END_SIDE_SECTION_HEADING__\n\n__START_SIDE_SECTION_LIST__\n- **Spider-Man: Across the Spider-Verse** - I loved how each character and their respective worlds had unique art styles. The film was fast-paced, and each scene was dense with information; there were so many things to look at in each frame!\n- **Surf's Up** - This movie is just so memorable to me. So many iconic characters and scenes. It's a heart warming story, and I highly recommend watching it.\n- **Gamyam** - This is a Telugu film that I watched as a kid. I can't tell if there's nostalgia at play, and whether I'd like it just as much if I watched it today, but I thought it was really well made back then.\n- **Karthik Calling Karthik** - Underrated thriller film, great soundtrack, and a really unique setting. I remember my mom and I being on edge the entire time we watched it.\n__END_SIDE_SECTION_LIST__\n__END_PARA_WITH_SIDE_SECTION__\n\n### Video Games\n\n__START_PARA_WITH_SIDE_SECTION__\nMy first (and only) console was a Gameboy Advanced. As a pesky 5 yo, I bawled my eyes out dedicatedly everyday until my parents finally were fed up and caved in. My older cousins had one, and I used to be supremely jealous of them every time I visited them. Once I got my own, they kindly gifted me some of their older catridges. And that's how I became fascinated with RPGs. It's been ages since I last touched a multiplayer game, but I did have an MMORPG phase from ages 10 to 13. I used to play a lot of *Adventure Quest Worlds*, and occasionally a bit of *Runescape* and *Fiesta*, because my friends preferred them.\n\nThe first game that drew me to RPGs was *Legacy of Goku II*. I was mesmerized by the Cell Saga, and being able to re-live it through this game brought me immense joy. I'm enamoured by games with a high fantasy backdrop. And that's how I eventually came across the *Soulsborne* series. I've not played any of them yet, but I've played an indie *Soulslike* title before.\n\nShortly after, probably while watching Dark Souls lore videos, I caught the *Metroidvania* fever. Metroidvania is a subgenre of RPGs that was spearheaded by 2 games that launched way back, called *Metroid* and *Castlevania*. Metroidvania games evoke a sense of overwhelm and void; you're stuck in a vast world that you know nothing about. They encourage you to let your curiosity guide you. The world usually branches out a lot, and if you have accquired the necessary locomotive skills (that sometimes shadow as supplementary combat techniques) to reach certain corners, ex. a double jump, a lot of these branches suddenly become accessible. It's euphoric when you magically appear back at an area that you were struggling with a few days ago, after walking through an entrance. The realization that the world loops upon itself, breezing through enemies that previously gave you such a tough time, understanding the biome of the universe you've inhabited, the conflict and politics. This explosion of information, it's magical.\n\nIn the future, I hope to explore the *Roguelike* genre. Hades seems interesting to me!\n\n__START_SIDE_SECTION_HEADING__\nTop game recs\n__END_SIDE_SECTION_HEADING__\n\n__START_SIDE_SECTION_LIST__\n- **Hollow Knight** - My first Metroidvania game. Greenpath was my favorite area, although it's one of the earliest. My favourite boss was Soul Master. It took countless attempts to understand its moveset and get into the right rhythm. I got stuck in the White Palace, lost steam, and never got back to it. Someday though!\n- **Legacy of Goku II** - One of the best GBA games in my opinion. The feedback loop when you're in Super Mode (not using the term Super Saiyan on account of Piccolo being playable) pulls you into a trance. Fight mobs and collect the energy orbs they drop so that you can replenish your mana that's being depleted by your elevated state. Combat requires deftness, because the impact from an attack pushes characters back, but also makes them bounce off walls. You need to time and switch direction to continue chaining attacks. They do a great job at weaving a coherent narrative with both filler and cannon content. My favourite boss fight is *Piccolo Vs Android 17*.\n- **Aria of Sorrow** - My first Castlevania game. I didn't know that they released games on the GBA. Over the course of 2 runs, I've unlocked the neutral, good, and bad endings. I've explored 100% of the map, and I'm trying to farm for all of the enemy souls so that I can unlock the secret ending. I tried playing the special game mode with Julius as the playable character. However, I'm stuck at the final boss fight. I suck at this game, and my excuse is that I played it on an emulator. It's really hard to press the buttons without looking since they're not raised, okay? I just tanked my way through enemy attacks and stockpiled potions.\n- **Mortal Shell** - My first Soulslike. This is an indie game, and it's shorter than most of its counterparts, but the lore and worldbuilding is rich. The build system is interesting, both narratively and in terms of mechanics! You can switch between the vessels of a few warriors. Each one possesses unique weapons and abilities.\n__END_SIDE_SECTION_LIST__\n__END_PARA_WITH_SIDE_SECTION__\n\n### Books\n\nThere are plenty of books that I like the idea of having read, but I've not gotten to, mainly because I'm feeling unmotivated and lazy. I end up collecting them and I tell myself that I'll get to them eventually, thus forming an **anti-library**. My mom thinks I'm wasteful. What's that? You think she's right? Alright, damn, give me a break! Regardless, I still think it's cool to have a bunch of books lying around that you could pick up if you're feeling inspired or curious enough.\n\nI'm mostly into high fantasy and slice of life stories, but I'm keen on exploring the vampire fiction and sci-fi genres further.\n\n### Anime and Manga\n\nMy introduction to anime was back in kindergarten, when Dragon Ball Z used to play on TV. I was so engrossed in the show and its characters, that a friend and I would meet up every evening to make some progress in LOG2. If memory serves me well, as an alternative to Budokai Tenkaichi (we didn't have access to a console on which we could play it), we briefly ran a DBZ fight club in our apartment's corridor; you could pick your character before engaging in combat. I'm already embarrassed, enough with the judgey stares. \n\nI don't consume this form of content as often anymore, but I used to voraciously from ages 17 - 22.\n\nDuel Masters, Mob Psycho 100, Naruto, Hunter X Hunter, Gintama, Code Geass, the Fate Series, Campfire Cooking in Another World, Berserk, Koe No Katachi, The Disastrous Life of Saiki K., Angel Beats, Megalo Box, Hajime No Ippo, Haikyuu, FMAB, Yuri on Ice, MHA, and Tokyo Ghoul are some that I enjoyed thoroughly and have fond memories of.\n\nYou don't think the DBZ fight club incident is true? Like I said, it happened way back in kindergarten because I was bored out of my mind and my memory of it is foggy! I'm going to start ignoring you and your little comments. Now get out of here!\n\n## Contact\n\nOh you want to keep in touch? Huh, that's amusing. Well, I'm most active on [Farcaster](https://farcaster.xyz/vaxitas.eth). Otherwise, you could try my \u003ca href=\"mailto:vaxitasxyz@gmail.com\" target=\"_blank\"\u003eemail\u003c/a\u003e.",
+        "metadata": {
+          "date": "0001-01-01T00:00:00Z",
+          "slug": "",
+          "categories": [],
+          "title": "About Me",
+          "summary": "Who am I? What names do I go by? What kind of work do I do? What are my likes and hobbies? What's the best way to contact me? These are all interesting questions, but what are you doing on this page?",
+          "index": 1
+        },
+        "categories": [],
+        "artifacts": [],
+        "files": [
+          {
+            "name": "district.png",
+            "location": "content/about/me/district.png",
+            "path": "/about/me/district.png"
+          },
+          {
+            "name": "drill.png",
+            "location": "content/about/me/drill.png",
+            "path": "/about/me/drill.png"
+          },
+          {
+            "name": "friends.png",
+            "location": "content/about/me/friends.png",
+            "path": "/about/me/friends.png"
+          },
+          {
+            "name": "gulbarga-nationals.png",
+            "location": "content/about/me/gulbarga-nationals.png",
+            "path": "/about/me/gulbarga-nationals.png"
+          },
+          {
+            "name": "hyderabad-nationals-1.png",
+            "location": "content/about/me/hyderabad-nationals-1.png",
+            "path": "/about/me/hyderabad-nationals-1.png"
+          },
+          {
+            "name": "hyderabad-nationals-2.png",
+            "location": "content/about/me/hyderabad-nationals-2.png",
+            "path": "/about/me/hyderabad-nationals-2.png"
+          },
+          {
+            "name": "news-clipping.jpg",
+            "location": "content/about/me/news-clipping.jpg",
+            "path": "/about/me/news-clipping.jpg"
+          },
+          {
+            "name": "news-clipping.png",
+            "location": "content/about/me/news-clipping.png",
+            "path": "/about/me/news-clipping.png"
+          }
+        ],
+        "links": []
+      },
+      {
+        "name": "What is Vaxitas?",
+        "location": "content/about/vaxitas",
+        "path": "/about/vaxitas",
+        "content": "I want this page to serve as a spec for the site. I decided to write this *a posteriori*, but I've wanted to build a personal site for a long time. I had made a couple of attempts in the past, but the form that they had taken was closer to that of a portfolio. This time, I think I have something that is truly personalized. So, I'd like for this page to act as a north star for how I want to interact with it.\n\nBack in 2020, when COVID first hit, I got on Twitter for the first time, and I thoroughly enjoyed being on the platform. I had just started to learn how to code, and often, I'd tweet out whatever I had learnt that day. Occassionally, I would try my hand at expressing some of my thoughts and ideas. This was a whimsical act, and it never overwhelmed me as it always felt like I was writing into obscurity.\n\nOver time, my relation with words changed. Your thoughts and ideas carry weight. There are plenty of examples for this. \n\n- The music that the people in a region listen to influences the way they talk, dress, and act. \n- A coach advising their player, who's high off of the rhythm of the match, during an interval, has to be choice with their words so as to make them privy to repetitive patterns or unnoticed openings. \n- The connotations of names you assign to variables and functions in your computer programs, guide you and your collaborators down specifc lines of thought. \n\nThis was something that never concerned me before, but I began to notice how often I got swayed by the ideas of others. And I'm oblivious to some of the things I've said that have had a lasting impact on others. This paralyzed me. What had once felt gratifying, now made me nervous. Expressing something that seems trivial to me could affect others negatively. Since then, I've been struggling to put myself forward online. But being online is still a huge part of my life, and now, left without creative devices, I just consume what others have to say.\n\nNot being able to adapt to this is an error on my part, but as a result, I began to lose out on the fun aspects of writing online. Expressing half fleshed-out thoughts and following them till they're actually coherent, stumbling upon interesting ideas, being able to share our ideas with others and spark discourse.\n\nAt the end of the day, most of us live on borrowed ideals. But, I think there is still some merit in this act of expressing and exploring ideas. Just as how ideas influence those around you, your own thoughts affect you; the way you view yourself, the way you react to situations, and so on. Planting ideas, detailing them, changing their shape in the appearance of new information, these are all characterestics that I deem important in most walks of life. It's also a sign of robustness. When you stop letting thoughts and ideas flow through you, you begin to atrophy. And I'd love to continue practicing it, because I'm aware of how fun it could be.\n\nI wanted to create a place that felt welcoming to me, a place that I would revisit often. This piece of writing on [why creatives should have a personal site](https://thecreativeindependent.com/essays/laurel-schwulst-my-website-is-a-shifting-house-next-to-a-river-of-knowledge-what-could-yours-be/) (I highly recommend giving it a read if you're considering making one) encouraged me to think of a visualization of my site that inspires me to work on it regularly. It didn't take long for me to settle on one; **a tree in my corner of the internet**. \n\nThe data structure that [Sapphire](https://github.com/nrabhiram/sapphire), my site generator, deals with and eventually emits, is a tree. Metaphorically as well, a tree made sense to me. I'd like for my tree to have all sorts of branches. Thick strong ones, short brittle ones, weird curly ones. And I'd love for these branches to shoot off of existing ones. But, to grow such a tree, I need to lay a strong foundation, and that's what I aim to do with this page. I primarily am building this site to help me think better. And in order to do so, I need to maintain a sustainable and symbiotic relation with it. I need to breathe life into it just as it breathes life into me. To me, that means that the interface, the navigation, the colors, the font, and particularly how information is structured, should feel peculiar to me and the way I'd like to think. I've tried to be more deliberate about this and I hope that the effort makes it easier to feed it with ideas.\n\nAnother thing that bothered me when I decided to make this site was, \"What if a half-baked idea that I had leads to a lot of people flocking here?\" (I know, I know, how presumptuous, humour me for a second). But, writing online is a spectrum.\n\n\u003e [...There's a very large gap between “think and write for just oneself”, and “try to write for the largest possible audience”. And different types of creative work are best done at different places within that gap. That's really the question: where exactly in that gap do you want to be? Or, to put it another way: how best to define the audience to support your creative work?...There's something strangely difficult in writing just for oneself. As far as I can tell, almost no-one can do it productively. We think better when the stakes are higher, and one of the best ways of raising the stakes is to make a document into something you're sharing with people whose good opinion you desire. Even just sharing with one such person makes an enormous difference to the quality of your thinking.](https://michaelnotebook.com/wn/website_enhance.html)\n\nI think I've put in a non-negligible amount of effort into personalizing this space, and a strong reason for it is that I don't want to commoditize myself. I think I'm mainly writing for myself and close ones. As such, I hope that my friends, and strangers that stumble upon this tree, can rest under its shade together with me. Hopefully, they find some branches worth observing or playing with. The icing on the cake would be if they decide to plant their own trees too, and I get to rest under their shade and marvel at their branches.\n\nIf you'd like to know more about [where I got the name from](#why-the-name-vaxitas), or [my design decisions the interface](#the-interface), continue reading!\n\n## Acknowledgements\n\nBut, before that, I'd like to express my gratitude to a couple of folks who inspired me to build up momentum and actually push the site out into the open:\n\n- [Judah](https://joodaloop.com/), his [services](https://webcraft.joodaloop.com/), and [advice on what makes a personal site](https://things.joodaloop.com/), was very helpful. He provided direction and a lot of fodder for me to think more deeply about what this site means to me.\n- [Geekodour](https://geekodour.org/). It's always fun to visit his website. There's so much that you could do there, yet it feels enjoyable instead of overwhelming when you're lost on a page.\n \n## Why the name Vaxitas?\n\nIt's just a moniker that I've used since I was a kid. I think I used it in almost every MMORPG I played at the time: Fiesta, Adventure Quest Worlds, and Runescape. When I was about 11 or 12, I had come across the Kingdom Hearts series. My mom wouldn't budge when I begged her to buy me a console. In fact, it was the reason why she pushed me to pick up a sport. So, I used to watch playthrough videos on YouTube. There was this character called Vanitas, whose design I found really cool. I decided that I wanted to use his name for my online persona. To make it sound more badass, I (somewhat) used KH's naming convention for the *Nobodies*, by inserting an X in the middle.\n\n![Kingdom Hearts - Vanitas](./vanitas.png)\n\nI think it just feels comforting to use a pen name for my writings, and it helps me think of the site as a strongly related, yet separate entity.\n\n## The Interface\n\nI've mentioned before on this page that I'm really proud of the interface. I think it enhances the way I've decided to structure my ideas. The primary navigation shows you a bunch of general pages / ideas. If these ideas branch out into more veins, they show up in the secondary navigation. I could also make the interface of the secondary nav unique to the category of ideas it falls under. These off-shoot ideas can also have their own veins if they want to! I always felt that the documentation style layout was really handy for both the writer and reader. There were a couple of concrete examples that I referenced, so that I could extend this design and truly make it my own: \n\n- [Brian's site](https://brianlovin.com/)\n- [The Bear App](https://bear.app/)\n\nI also love the colour scheme. Before I even picked out the colours, I knew I wanted to keep the colour palette as simple as possible. Colours aren't something I've played with a lot before, and I didn't want to feel fatigued when making decisions around this. My friend helped me make a moodboard of colour palettes that they found on Pinterest. I picked 2 of them, one for my light theme, and one for my dark. \n\nI personally find my light theme very pleasant to look at. For some reason, it reminds me of having ice cream at Milano (BLR)! I think my dark theme's alright as well, and I have it in case my eyes feel a bit irritated and I want to switch it up once in a while.\n\nWhile looking for fonts, I knew that I was going for something that made me feel like I was writing in a notebook. I just happened to chance upon this when I opened up Google Fonts, so I went with it.\n\nI want this site to be durable. The UI isn't something I intend to revamp frequently. In fact, I hope that I can stick with this for a few years at least. A core tenet of [a website that is designed to last](https://jeffhuang.com/designed_to_last/) is that text is a universal interface. A website that can withstand the test of time, doesn't send a lot of overhead along with the text when someone vists it. I found some of the rules in the manifesto too restrictive to abide by. But, this was a philosophy I tried my best to adopt; *use text as your primary interface*.\n\nAt some junctures during development, I found it a bit difficult to stick to this rule. I spend most of my time working on web applications, so my immediate solution for any supplemtary content on a page that could break the layout is to wrap it in a dropdown or a modal that renders conditionally. This means that the text wouldn't be served immediately and it would only be rendered when the pop-up is open. The consequence is that text wouldn't be a [first-class citizen](https://en.wikipedia.org/wiki/First-class_citizen) on my site. I'm proud that I made an active effort to fight that instinct.\n\nSapphire and Svelte forms most of the scaffolding of my site. This ensures that I can think of the text, the rendering of the text, and the relation between pages, as separate concerns. The intermediate output that is used to render the pages, the schema, creates a hierarachical structure of my pages, that is shown in the navigation. The final output that is produced is the necessary CSS, JS, and the HTML files for each page. This gives me the confidence that I can change the appearance of my site fairly easily, because it would only require me to swap out one rendering template for another, without having to disturb the other independent parts of the process.",
+        "metadata": {
+          "date": "2025-05-14T00:00:00Z",
+          "slug": "",
+          "categories": [],
+          "title": "What is Vaxitas?",
+          "summary": "What is the purpose of this site? What is a metaphor for the site? How does it influence the way I interact with it? Why did I create it in the first place? These are some questions that I aim to answer here.",
+          "index": 2
+        },
+        "categories": [],
+        "artifacts": [],
+        "files": [
+          {
+            "name": "vanitas.png",
+            "location": "content/about/vaxitas/vanitas.png",
+            "path": "/about/vaxitas/vanitas.png"
+          }
+        ],
+        "links": []
+      }
+    ],
+    "files": [],
+    "links": [
+      {
+        "path": "/about/me",
+        "label": "About Me",
+        "live": true,
+        "metadata": {
+          "date": "0001-01-01T00:00:00Z",
+          "slug": "",
+          "categories": [],
+          "title": "About Me",
+          "summary": "Who am I? What names do I go by? What kind of work do I do? What are my likes and hobbies? What's the best way to contact me? These are all interesting questions, but what are you doing on this page?",
+          "index": 1
+        },
+        "links": []
+      },
+      {
+        "path": "/about/vaxitas",
+        "label": "What is Vaxitas?",
+        "live": true,
+        "metadata": {
+          "date": "2025-05-14T00:00:00Z",
+          "slug": "",
+          "categories": [],
+          "title": "What is Vaxitas?",
+          "summary": "What is the purpose of this site? What is a metaphor for the site? How does it influence the way I interact with it? Why did I create it in the first place? These are some questions that I aim to answer here.",
+          "index": 2
+        },
+        "links": []
+      }
+    ]
+  },
+  "home": {
+    "name": "Vaxitas",
+    "location": "content/home",
+    "path": "/home",
+    "content": "\u003cdiv class=\"two-halves\"\u003e\n  \u003cdiv class=\"half first-half\"\u003e\n    \u003cp\u003e\u003cstrong\u003eHi, I'm Abhi, and I'm a maker of software products\u003c/strong\u003e — usually applications and sites that live on the web. I also prototype games, occasionally create cinematic sequences, write, and host badminton pick-up games.\u003c/p\u003e\n    \u003cp\u003e\u003cstrong\u003eAre you looking for a collaborator?\u003c/strong\u003e Head over to \u003ca href=\"/yorozuya\"\u003eYorozuya\u003c/a\u003e, where I do odd jobs and I've extensively written about my profession, strengths, and the things that intrigue me.\u003c/p\u003e\n    \u003cul class=\"links\"\u003e\n      \u003cli\u003e\n        \u003ca href=\"https://github.com/nrabhiram\" target=\"_blank\"\u003e\n          \u003csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" class=\"icon icon-fill\"\u003e\u003cpath d=\"M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z\"/\u003e\u003c/svg\u003e\n          \u003cspan\u003eGithub\u003c/span\u003e\n        \u003c/a\u003e\n      \u003c/li\u003e\n      \u003cli\u003e\n        \u003ca href=\"https://farcaster.xyz/vaxitas.eth\" target=\"_blank\"\u003e\n          \u003csvg role=\"img\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-fill\"\u003e\u003cpath d=\"M18.24 0.24H5.76C2.5789 0.24 0 2.8188 0 6v12c0 3.1811 2.5789 5.76 5.76 5.76h12.48c3.1812 0 5.76 -2.5789 5.76 -5.76V6C24 2.8188 21.4212 0.24 18.24 0.24m0.8155 17.1662v0.504c0.2868 -0.0256 0.5458 0.1905 0.5439 0.479v0.5688h-5.1437v-0.5688c-0.0019 -0.2885 0.2576 -0.5047 0.5443 -0.479v-0.504c0 -0.22 0.1525 -0.402 0.358 -0.458l-0.0095 -4.3645c-0.1589 -1.7366 -1.6402 -3.0979 -3.4435 -3.0979 -1.8038 0 -3.2846 1.3613 -3.4435 3.0979l-0.0096 4.3578c0.2276 0.0424 0.5318 0.2083 0.5395 0.4648v0.504c0.2863 -0.0256 0.5457 0.1905 0.5438 0.479v0.5688H4.3915v-0.5688c-0.0019 -0.2885 0.2575 -0.5047 0.5438 -0.479v-0.504c0 -0.2529 0.2011 -0.4548 0.4536 -0.4724v-7.895h-0.4905L4.2898 7.008l2.6405 -0.0005V5.0419h9.9495v1.9656h2.8219l-0.6091 2.0314h-0.4901v7.8949c0.2519 0.0177 0.453 0.2195 0.453 0.4724\" stroke-width=\"1\"\u003e\u003c/path\u003e\u003c/svg\u003e\n          \u003cspan\u003eFarcaster\u003c/span\u003e\n        \u003c/a\u003e\n      \u003c/li\u003e\n      \u003cli\u003e\n        \u003ca href=\"https://x.com/vaxitasxyz\" target=\"_blank\"\u003e\n          \u003csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" class=\"icon icon-fill\"\u003e\u003cpath d=\"M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z\"/\u003e\u003c/svg\u003e\n          \u003cspan\u003eTwitter\u003c/span\u003e\n        \u003c/a\u003e\n      \u003c/li\u003e\n      \u003cli\u003e\n        \u003ca href=\"https://bsky.app/profile/vaxitas.bsky.social\" target=\"_blank\"\u003e\n          \u003csvg fill=\"none\" viewBox=\"0 0 64 57\" style=\"width: 17.965px; height: 16px;\"\u003e\u003cpath class=\"icon-fill\" d=\"M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z\"\u003e\u003c/path\u003e\u003c/svg\u003e\n          \u003cspan\u003eBluesky\u003c/span\u003e\n        \u003c/a\u003e\n      \u003c/li\u003e\n      \u003cli\u003e\n        \u003ca href=\"mailto:vaxitasxyz@gmail.com\" target=\"_blank\"\u003e\n          \u003csvg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke-width=\"3\" stroke=\"currentColor\" class=\"icon icon-stroke\"\u003e\u003cpath stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75\" /\u003e\u003c/svg\u003e\n          \u003cspan\u003eEmail\u003c/span\u003e\n        \u003c/a\u003e\n      \u003c/li\u003e\n      \u003cli\u003e\n        \u003ca href=\"mailto:vaxitasxyz@gmail.com\" target=\"_blank\"\u003e\n          \u003csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" class=\"icon icon-fill\"\u003e\u003cpath d=\"M6.503 20.752c0 1.794-1.456 3.248-3.251 3.248-1.796 0-3.252-1.454-3.252-3.248 0-1.794 1.456-3.248 3.252-3.248 1.795.001 3.251 1.454 3.251 3.248zm-6.503-12.572v4.811c6.05.062 10.96 4.966 11.022 11.009h4.817c-.062-8.71-7.118-15.758-15.839-15.82zm0-3.368c10.58.046 19.152 8.594 19.183 19.188h4.817c-.03-13.231-10.755-23.954-24-24v4.812z\"/\u003e\u003c/svg\u003e\n          \u003cspan\u003eRSS Feed\u003c/span\u003e\n        \u003c/a\u003e\n      \u003c/li\u003e\n      \u003cli\u003e\n        \u003ca href=\"mailto:vaxitasxyz@gmail.com\" target=\"_blank\"\u003e\n          \u003csvg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke-width=\"2.5\" stroke=\"currentColor\" class=\"icon icon-stroke\"\u003e\u003cpath stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z\" /\u003e\u003c/svg\u003e\n          \u003cspan\u003eResume\u003c/span\u003e\n        \u003c/a\u003e\n      \u003c/li\u003e\n    \u003c/ul\u003e\n    \u003cp\u003eNowadays, I'm into \u003ca href=\"https://github.com/nrabhiram/sicp-exercises\" target=\"_blank\"\u003ePLT, functional programming\u003c/a\u003e, \u003ca href=\"https://github.com/nrabhiram/monkey\" target=\"_blank\"\u003einterpreters, and compilers\u003c/a\u003e. In my free time, I'm polishing the \u003ca href=\"https://github.com/nrabhiram/sapphire\" target=\"_blank\"\u003estatic site generator\u003c/a\u003e that powers my website.\u003c/p\u003e\n    \u003cp\u003e\u003cem\u003eThat marks the end of the sales presentation. Now, Officer Abhi, my director of traffic, is going to take the wheel, and point you to the good stuff on the rest of this site. Over to you.\u003c/em\u003e\u003c/p\u003e\n    \u003cp\u003eLearn more \u003ca href=\"/about/me\"\u003eabout me\u003c/a\u003e and \u003ca href=\"/about/vaxitas\"\u003eabout the purpose of this site\u003c/a\u003e.\u003c/p\u003e\n    \u003cp\u003eCheck out what I'm up to \u003ca href=\"/now\"\u003enow\u003c/a\u003e — my current obsessions, whereabouts, and struggles. I also write monthly logs here.\u003c/p\u003e\n    \u003cp\u003eI hope to eventually add other pages that I can direct you to such as my blog, notes, curated lists, projects, etc. I shall update this page once I've done that, so keep your eyes peeled!\u003c/p\u003e\n  \u003c/div\u003e\n  \u003cdiv class=\"half second-half\"\u003e\n    \u003ca href=\"https://youtu.be/g7WdED8W0-0?si=Couk2QL3-lFQv0an\" target=\"_blank\" class=\"img-card\"\u003e\n      \u003cimg src=\"/content/home/reality-marble.png\" alt=\"My rendition of Archer's Reality Marble from Fate: UBW\" width=\"460\" height=\"240\" /\u003e\n      \u003cdiv\u003eReality Marble\u003c/div\u003e\n    \u003c/a\u003e\n    \u003csection class=\"img-card\"\u003e\n      \u003cimg src=\"/content/home/siri-and-me.png\" alt=\"Siri and me\" width=\"460\" height=\"259\" /\u003e\n      \u003cul\u003e\n        \u003cli\u003evampire fiction fanboy\u003c/li\u003e\n        \u003cli\u003emetroidvania enthusiast\u003c/li\u003e\n        \u003cli\u003eex-badminton athlete turned hobbyist\u003c/li\u003e\n        \u003cli\u003elittle southpaw\u003c/li\u003e\n        \u003cli\u003efriends \u0026 family\u003c/li\u003e\n        \u003cli\u003eGBA supremacy\u003c/li\u003e\n        \u003cli\u003ehandcrafted software\u003c/li\u003e\n        \u003cli\u003eunintentionally funny\u003c/li\u003e\n      \u003c/ul\u003e\n    \u003c/section\u003e\n  \u003c/div\u003e\n\u003c/div\u003e",
+    "metadata": {
+      "date": "0001-01-01T00:00:00Z",
+      "slug": "",
+      "categories": [],
+      "title": "Vaxitas",
+      "summary": "Yellow, welcome to my corner on the internet!",
+      "index": 1
+    },
+    "categories": [],
+    "artifacts": [],
+    "files": [
+      {
+        "name": "reality-marble.png",
+        "location": "content/home/reality-marble.png",
+        "path": "/home/reality-marble.png"
+      },
+      {
+        "name": "siri-and-me.png",
+        "location": "content/home/siri-and-me.png",
+        "path": "/home/siri-and-me.png"
+      }
+    ],
+    "links": []
+  },
+  "now": {
+    "name": "Now",
+    "location": "content/now",
+    "path": "/now",
+    "content": "Welcome to the \"now\" section of my site, where I talk about what I'm up to right now! I try to maintain monthly logs of my life that cover highlights, new experiences, learning updates, progress on projects, books I read, movies I watched, games I tried out, and my general headspace.\n\nYou can find the links to my logs in the navbar in reverse chronological order. \n\nClick here for the most recent monthly log.\n\n## Snapshot\n\nHere's a snapshot of me (kept *current-ish*, I try). \n\nIf you're interested in learning more about me (I'm flattered), check out [`/about/me`](/about/me).\n\n\u003cdiv class=\"cards-2-grid\"\u003e\n  \u003cdiv class=\"cards-col-container\"\u003e\n    \u003csection class=\"card-section\"\u003e\n      \u003cdiv class=\"card-heading\"\u003eProjects\u003c/div\u003e\n      \u003cp\u003eI'm currently juggling between a few of them. I'm adhering to this practice of having at most 3 in my rotation at any given time. This ensures that I don't deviate as much, build momentum, and switch between projects if I'm lacking the motivation to work on one.\u003c/p\u003e\n      \u003cul\u003e\n        \u003cli\u003e\u003cstrong\u003eSapphire\u003c/strong\u003e - A bespoke site generator that respects the organization of \u003ccode\u003e.md\u003c/code\u003e files to create pages and the navigation system.\u003c/li\u003e\n        \u003cli\u003e\u003cstrong\u003eVaxitas\u003c/strong\u003e - My personal site, an extension of my self, hence why I thought a moniker to be fitting. It treats ideas and content as first class citizens. Considers \u003cem\u003etext as a universal interface\u003c/em\u003e.\u003c/li\u003e\n        \u003cli\u003e\u003cstrong\u003eShirou-TP\u003c/strong\u003e - A small and opinionated UI library, written in Svelte. Consists of self-sufficient and headless components such as a virtualized table and a looping carousel.\u003c/li\u003e\n      \u003c/ul\u003e\n    \u003c/section\u003e\n    \u003csection class=\"card-section\"\u003e\n      \u003cdiv class=\"card-heading\"\u003eObsessions\u003c/div\u003e\n      \u003cul\u003e\n        \u003cli\u003eVampire fiction\u003c/li\u003e\n        \u003cli\u003e\u003ca href=\"https://youtu.be/LXuNNqoo1WQ?si=5yLWvHU8-Cn7Lqmj\" target=\"_blank\"\u003eRental\u003c/a\u003e by Brockhampton\u003c/li\u003e\n        \u003cli\u003eSubway\u003c/li\u003e\n      \u003c/ul\u003e\n    \u003c/section\u003e\n    \u003csection class=\"card-section\"\u003e\n      \u003cdiv class=\"card-heading\"\u003eLearning\u003c/div\u003e\n      \u003cul\u003e\n        \u003cli\u003e\u003ca href=\"https://interpreterbook.com/\" target=\"_blank\"\u003eWriting an Interpreter in Go\u003c/a\u003e\u003c/li\u003e\n        \u003cli\u003ePixel art\u003c/li\u003e\n      \u003c/ul\u003e\n    \u003c/section\u003e\n  \u003c/div\u003e\n  \u003cdiv class=\"cards-col-container\"\u003e\n    \u003csection class=\"card-section\"\u003e\n      \u003cdiv class=\"card-heading\"\u003eLocation\u003c/div\u003e\n      \u003cul\u003e\n        \u003cli\u003e\u003cstrong\u003eIRL\u003c/strong\u003e - HYD | BLR\u003c/li\u003e\n        \u003cli\u003e\u003cstrong\u003eWeb\u003c/strong\u003e - \u003ca href=\"https://farcaster.xyz/vaxitas.eth\" target=\"_blank\"\u003eFarcaster\u003c/a\u003e | \u003ca href=\"https://bsky.app/profile/vaxitas.bsky.social\" target=\"_blank\"\u003eBluesky\u003c/a\u003e\u003c/li\u003e\n      \u003c/ul\u003e\n    \u003c/section\u003e\n    \u003csection class=\"card-section\"\u003e\n      \u003cdiv class=\"card-heading\"\u003eMusic\u003c/div\u003e\n      \u003cul\u003e\n        \u003cli\u003eBrockhampton\u003c/li\u003e\n        \u003cli\u003eMitski\u003c/li\u003e\n      \u003c/ul\u003e\n    \u003c/section\u003e\n    \u003csection class=\"card-section\"\u003e\n      \u003cdiv class=\"card-heading\"\u003eReading\u003c/div\u003e\n      \u003cul\u003e\n        \u003cli\u003e\u003cstrong\u003eFooled by Randomness\u003c/strong\u003e - Nassim Nicholas Taleb\u003c/li\u003e\n        \u003cli\u003e\u003cstrong\u003eA Happy Death\u003c/strong\u003e - Albert Camus\u003c/li\u003e\n      \u003c/ul\u003e\n    \u003c/section\u003e\n    \u003csection class=\"card-section\"\u003e\n      \u003cdiv class=\"card-heading\"\u003eMovies \u0026 Shows\u003c/div\u003e\n      \u003cul\u003e\n        \u003cli\u003eSinners\u003c/li\u003e\n        \u003cli\u003eMission Impossible\u003c/li\u003e\n        \u003cli\u003eAayutha Ezhuthu\u003c/li\u003e\n        \u003cli\u003eCastlevania\u003c/li\u003e\n      \u003c/ul\u003e\n    \u003c/section\u003e\n    \u003csection class=\"card-section\"\u003e\n      \u003cdiv class=\"card-heading\"\u003ePlaying\u003c/div\u003e\n      \u003cul\u003e\n        \u003cli\u003eBadminton\u003c/li\u003e\n        \u003cli\u003eCastlevania: Aria of Sorrow\u003c/li\u003e\n        \u003cli\u003eMother 3\u003c/li\u003e\n      \u003c/ul\u003e\n    \u003c/section\u003e\n  \u003c/div\u003e\n\u003c/div\u003e\n\n\u003cdiv class=\"cards-col-container\"\u003e\n  \u003csection class=\"card-section\"\u003e\n    \u003cdiv class=\"card-heading\"\u003eStruggles\u003c/div\u003e\n    \u003cul\u003e\n      \u003cli\u003e\u003cstrong\u003eGaining momentum\u003c/strong\u003e - Whether it's learning new things or trying new activities, I find it challenging to make headway. I'm exploring how I can be more focused and deliberate with my personal time. Maybe finding groups with similar goals and interests will help.\u003c/li\u003e\n      \u003cli\u003e\u003cstrong\u003eLoneliness\u003c/strong\u003e - I don't live in close proximity to most people whom I consider my friends or peers. I'm also not keen on making new acquaintances in my city because I hold an opinion (that I'm seeking to break) that people here are vapid. My friends are always welcoming whenever I visit. I'd love to host them as well, so I'm encouraging them to come over sometimes.\u003c/li\u003e\n      \u003cli\u003e\u003cstrong\u003eGluttony\u003c/strong\u003e - There are some things I relish, that I tend to overdo to the point of disgust.\u003c/li\u003e\n    \u003c/ul\u003e\n  \u003c/section\u003e\n  \u003csection class=\"card-section\"\u003e\n    \u003cdiv class=\"card-heading\"\u003eTriumphs\u003c/div\u003e\n    \u003cul\u003e\n      \u003cli\u003e\u003cstrong\u003eA friend visited me in HYD.\u003c/strong\u003e I hadn't shared with him my intent to host others, so I was touched. We met for breakfast once and played with my badminton pick-up group the next day.\u003c/li\u003e\n      \u003cli\u003e\u003cstrong\u003eShipping this site.\u003c/strong\u003e Easily one of the most important things I've built and done for myself.\u003c/li\u003e\n      \u003cli\u003e\u003cstrong\u003eFound a badminton pick-up group with great games in HYD.\u003c/strong\u003e I cannot emphasize enough how monumental a task this is.\u003c/li\u003e\n      \u003cli\u003e\u003cstrong\u003eListened to my first album end-to-end\u003c/strong\u003e: \u003cem\u003eSaturation I\u003c/em\u003e.\u003c/li\u003e\n      \u003cli\u003e\u003cstrong\u003eCompleted Aria of Sorrow\u003c/strong\u003e - I played through 2 runs, and got the 3 main endings.\u003c/li\u003e\n      \u003cli\u003e\u003cstrong\u003eWatched movies solo in the theatres\u003c/strong\u003e - \u003cem\u003eSinners\u003c/em\u003e and \u003cem\u003eMission: Impossible - The Final Reckoning\u003c/em\u003e.\u003c/li\u003e\n    \u003c/ul\u003e\n  \u003c/section\u003e\n\u003c/div\u003e",
+    "metadata": {
+      "date": "0001-01-01T00:00:00Z",
+      "slug": "",
+      "categories": [],
+      "title": "Now",
+      "summary": "This is where I write monthly life updates, share my wins, struggles, obsessions, and more.",
+      "index": 4
+    },
+    "categories": [],
+    "artifacts": [
+      {
+        "name": "April 2025",
+        "location": "content/now/apr-2025",
+        "path": "/now/apr-2025",
+        "content": "- I went to a Crocs outlet to buy slippers for home wear. The straps on my older pair broke.\n- My cousin sister visited us during her summer break. She had completed her 10th grade exams.\n- My cousin and I watched a couple of movies in the theatre: *Alappuzha Gymkhana* and *Dog Man*. This was my first Malayalam movie in the theatres and my first 4DX experience respectively. My sister particularly enjoyed the former.\n- For the first couple of weeks this month, I didn't play as often. My friends were occupied with work and we couldn't agree on a date. \n- I succeeded in persuading them to join me for a session once. There were 3 of us, so we took turns to play singles. \n- Towards the end of the session, my friend caught a back spasm. It started swelling up, so we cut the session short. \n- Later, he consulted with a doctor. We were relieved it wasn't serious, though it confirmed our suspicions about the cause. He didn't ease into the physical demands of playing a game after weeks of inactivity.\n- As we were leaving, my friends jokingly suggested that I buy a second-hand car instead of travelling by cab. I could get a premium car for dirt cheap. I pointed out that I'm a homebody, and I rarely step out of the house. It seemed like a waste of money. They cleverly retorted by volunteering to drive me around if I get a second-hand BMW or Audi.\n- That same day, in the afternoon, I accompanied my mom and cousin to Luna. I hoarded some books as I felt my mom's disapproving gaze bore into my back.\n- I left for BLR that night. My family and cousin were to follow the week after. We were bringing Siri along for our family trip and our vehicle would have been cramped with the 6 of us. That's why I left earlier.\n- I attended the [Zig India Meetup](https://zigindia.org/) my first day in BLR. They discussed overflow exploits and [MLIR](https://mlir.llvm.org/). I felt out of my depth but I'm trying to explore making compilers in my free time. Meeting folks with similar interests seemed like a good idea.\n- My first week in BLR, I played everyday. I was familiar with the organizer and some of the members in the group from back when I used to live there.\n- I met my coworker, Shashank, for the first time after working together for over a year. He recently shifted to the city. The ride from my uncle's to his place was painstakingly long, but it was worth it! We finished work, caught up, and had dinner together. I'm proud of the fact that I hooked him on to Calfornia Burrito.\n- I also met Varun for dinner one day. We caught up and I conveyed my condolences for Biryani's[^1] passing. We talked about what we were working on at the time, the games we were trying out, and what was up with our lives in general.\n- Sunday morning, I met Preet and [Abhishek](https://abhi.studio/) at Cubbon. I went to the park with my mom, cousin, grandfather, and Siri. While I was waiting for them, Siri made an acquaintance with another dog called Majnu. He was so cute, obedient and well-behaved. He wanted to play with Siri badly, but she didn't cooperate. I took a stroll with Preet and Abhishek. Then, I headed back home with my family.\n- In the evening, I went to [Pizza 4 P's](https://pizza4ps.com/in) with my sisters and mom. My sister had booked our reservation a week in advance. Unfortunately, she couldn't find a table for the entire family.\n- When we first arrived at the restaurant, it didn't make a strong impression on my mom from outside. But she enjoyed the experience once we were seated.\n- The next day, we woke up early to travel to Coorg for our family vacation. We left in 2 separate vehicles. \n- We stopped in between to visit a temple. My dad was fascinated by the architecture. The verandah was cool although beams of sunlight scattered across it.\n- We reached our homestay just in time for lunch. My family was disappointed with the place.\n- Some of the complaints I remember are: there aren't any walls around the house to protect Siri from the wild dogs that were roaming around, the rooms aren't as spacious as in the pictures, the house is almost 30 minutes away from the town, and the place is dirty.\n- I personally thought that the place was alright. It was secluded and quiet, but the scenery was nice. We also had TV and good network connectivity. I appreciated the change in pace and environment. It seemed like a great way to reset.\n- But, no one nipped the concerns off and my family had begun to spiral. Begrudgingly, I suggested that they request a refund so that we could head back. It seemed pointless to stay there for half a week when all we were going to do was complain the whole day.\n- After some back and forth, we came to an agreement with the owners regarding the refund. We left at noon the following day.\n- On the way back, we stopped at the elephant reserve and a lake and a restaurant for lunch.\n- I spent the rest of the week mostly playing badminton.\n- I met another friend of mine a couple of times. They were in the city to attend their cousin's wedding. We watched Sinners together and grabbed lunch at Fatty Bao.\n- I didn't leave with my family because car journeys make me nauseous. I left the next day. \n- My cousin's family dropped me off and bid me farewell. While we were waiting, my cousin asked if I had come across any other places to explore in HYD. I had mentioned to her that I wanted to find interesting places and challenge my preconception about HYD being a boring city.\n\n## Backmatter\n\n[^1]: Biryani's a little stray kitten that followed Varun and me up the elevator and into his apartment. We couldn't find his mother, one thing led to another, and they eventually decided to adopt him. He's usually mellow, but he could be very inquisitive and cheeky at times. I know because I've witnessed his *zoomies* first-hand, often late in the night. I'm abruptly awakened from my slumber by the incessant scratching of my shorts while he sits on my bum.\n\nThe reason for his name is also quite funny. Preet and Varun were discussing what they should do with the kitten when he first entered the house. Varun sarcastically suggested that they make cat biryani (they're both vegetarians). And the name just stuck. \n\n![Cute pic of Biryani](./biryani-posing.jpeg)\n\nI would only see Biryani when I visited BLR, but I'm grateful for the time I spent with him. I'm deeply saddened by his passing. RIP. We'll miss him. I hope that Varun and Preet get through this tough time.",
+        "metadata": {
+          "date": "2025-05-01T23:03:00+05:30",
+          "slug": "",
+          "categories": [],
+          "title": "April 2025",
+          "summary": "My cousin sister visited us from BLR after her board exams, watched a couple of movies in the theatres, went to a bookstore, went to BLR, attended the Zig India Meetup, visited friends, and visited Coorg briefly with my family.",
+          "others": {
+            "date-edited": "2025-06-30T14:36:00+05:30"
+          }
+        },
+        "categories": [],
+        "artifacts": [],
+        "files": [
+          {
+            "name": "biryani-posing.jpeg",
+            "location": "content/now/apr-2025/biryani-posing.jpeg",
+            "path": "/now/apr-2025/biryani-posing.jpeg"
+          }
+        ],
+        "links": []
+      },
+      {
+        "name": "May 2025",
+        "location": "content/now/may-2025.md",
+        "path": "/now/may-2025",
+        "content": "For the longest time, I'd been searching for a pickup group in Hyderabad. Ideally, one that has members who play well, regularly, and in the mornings. It's nearly impossible for a group to meet all 3 of these criteria. Naturally, I was elated when I found one this month! The organizers are mutuals, and I've played with them before. My senior from college joins them whenever he's in town. I met one of them last month in a badminton hall when I went to play with my friends. We caught up, and I mentioned that I was looking for a group to play with regularly, so he invited me to join them.\n\nThe hall they play in is quite far from my place, but I’m not inconvenienced because it’s early morning. On the way back, I can take the metro to avoid traffic. The games are intense and there are no distractions. It leaves me fulfilled and refreshed. It's a good start to the day, except that it is physically exhausting. I replenish my energy by taking a nap as soon as I get home.\n\nI've also gotten slightly leaner. I suspect it's because I've cut down my junk intake.\n\n## Fever\n\nOne day, after my first week with this new group, I suddenly felt feeble. I took a break from work to lay down. While I was resting, my temperature spiked. That night, I had a 104F fever. Fortunately, after taking some *Paracetamol* and sleeping for a few hours, my fever broke. I was still weak and it took me a couple of days to fully recover. \n\nDo you want to know what the worst part of this episode was? On the first day that I fell ill, my parents went out to shop and I asked my mom to bring me back a cinnamon roll. Being the glutton that I am, I stuffed as much as I could into my mouth. Then, it sank in. I wasn't hungry, I couldn't taste the roll, and I wasn't able to relish it.\n\nI'm not sure what caused the abrupt fever, but I have a hunch that it had something to do with the change in weather.\n\n## Reunion\n\nTowards the end of the month, my senior visited. It was his last week before he began his higher studies and he wanted to catch up with his friends in the city before leaving. He's close with the pickup group, so we met almost everyday to play. We mostly played doubles. For his last day, we had planned a round-robin tournament. Sadly, some of the members had personal commitments that took precedence and the plan was canceled. The 3 of us who were present that day played singles instead. Everyday, after the game, a few of us (my senior included) would head for breakfast. It was nice that we got to spend time. I miss having him around. I hope he enjoys his course and makes the most out of it.\n\n## Tailbone Pain\n\nAround then, I experienced acute tailbone pain. It lasted for nearly the entire week. For the first couple of days, I didn't think much of it, and I iced it periodically. I assumed that it occurred because I sat on the floor (or on my bed with bad posture) for too long. But the pain wouldn't let up. In fact, it got worse over time. It was so unbearable that I couldn't sit on my butt or pivot while playing. On the court, although it still nagged at me, I could ignore the pain once my body was warm enough.\n\nLater, I noticed that there was some swelling. I called my gramps up to consult with him on how I should treat it. It's called a *pilonidal cyst*, and it's common in adult males who sit for long periods. For the next few days, I ensured that I used my desk while standing, I tried my best to not sit on the swollen region, and I applied a heat pack 4-5 times everyday. If there wasn't any progress after a couple of days, I was supposed to visit a doctor, who would perform an incision to drain out the cyst. Fortunately, on Sunday, it burst while I was applying heat.\n\nI'm grateful that I invested in a standing desk. But, I have to confess, I mostly use it while sitting nowadays. I'm a bit tired and lazy since I play early in the morning. I'm trying to figure out a system that prevents me from sitting for long durations. It's also alarming that I had 2 health concerns this month. That has never happened before.\n\n## Projects\n\nEarlier this month, I hacked on an ongoing project; a small UI library written in Svelte that I wanted to make for myself. It's an offshoot project that I started because I got sidetracked while making my site. It got out of hand when I decided that I needed to implement a sophisticated carousel component. One that lets you:\n\n- define the percentage of the viewport each slide should occupy\n- loop the slides infinitely\n- select the direction in which slides move\n\nI was fixated on this for a few weeks until I reached the brink of unbridled frustration. It drove me insane that I couldn't figure out how to maintain the illusion of looping. After a lot of head-banging, sketching a diagram helped me think more deeply about how it should work. Then, it magically clicked for me. I lost my motivation once I solved this problem.\n\nThat seemed like a good time to put the UI library on hold and finish making my site. I'm excited about how it is shaping up, and I can't wait to share it with my friends.\n\nI was also supposed to help one of my friends with making a site for his rooftop strength and conditioning gym in BLR. My excuse was that I wasn't doing well health-wise on 2 separate occasions this month. I'm lucky he isn't in a rush, but I'll prioritize this and have something ready over the weekend.\n\nOn a side note, if you're looking for a place to train you should check this place out. The instructor/owner is warm and very knowledgeable. Drop me a message and I'll introduce you!\n\n## Shows and Movies\n\nThis month, I watched a bunch of movies, both in the theatres and in the comfort of my home. By the time the weekend rolls by, I'm bored out of my mind and desperate to get out of the house. So, I decided to try watching movies solo in the theatre! Surprisingly, I quite like it. It's a welcome change of environment. \n\nI can't recall what triggered it, but I also binged through 4 seasons of *Modern Family* (re-watch) recently. Anyway, here's a list of movies I watched this month.\n\n### Sinners\n\nWatched it twice, first in 2D with a friend, and then alone in 4DX. I wanted to watch it in IMAX, but I couldn't find any screenings. I missed the opening sequence the first time, but I caught both of the end credits scenes. I wasn't prepared for the turbulence my second time watching. The first time, there was just so much happening all at once, that I found it a bit difficult to process. I decided right then that I needed a re-watch. The lighting was bad (I heard that this wasn't the case in IMAX), yet, I thoroughly enjoyed both watches. This also happens to be my first horror film in the theatres!\n\n### Mission Impossible: Final Reckoning\n\nIt was pouring the day I went to watch this. I was running late and I missed the opening sequence. I'm not into action flicks, but I just went ahead anyway. Like I said, I'm trying new experiences. I had watched the 7th installment with my friends. In fact, we did a movie marathon that day. We watched MI7 and Oppenheimer back-to-back. My memory of the specifics is foggy, but I remember the main plotline. I felt like I had the relevant context to understand this movie. I don't have much to say about the experience, but I think it's the kind of movie that wants you to shut your brain off in order to enjoy it.\n\n### Ala Modlaindhi\n\nThis is an old Telugu rom-com film. I watched it with my mom when I was a kid. I was looking for something light-hearted to watch with a friend and we landed on this. This quickly morphed into a hate-watch session. The plot is generic and wafer-thin. Despite that, I caught myself chuckling from time to time, although I'm unsure whether it was because of the delivery of jokes in the movie or our incessant hating.\n\n### Zindagi Na Milegi Dobara\n\nMy dad's been on a crime documentary marathon this month and my mom couldn't stand it any longer. During dinner, she decided that she needed to watch something less grimy and settled on this film. Back when we were living in SG, I watched it with my whole family in the theatre. I didn't watch the entire thing this time, but I kept popping in occasionally. It's a decent watch, and I think the acting's really good.\n\n### Dil Chata Hai\n\nMy sister wanted to watch it after ZNMD. They both share the same template, but get this, Farhan Akhtar, who was one of the leads in it, was the director of this movie. In fact, it was his sister, Zoya Akhtar, who directed ZNMD. The trios in both the movies share a similar dynamic too. I left halfway because I got bored, and I'm unsure if my family completed it.\n\n### Aayutha Ezhuthu\n\nI've seen a sum total of 3 Mani Ratnam films, and this is one of them. I have vague recollections of watching it with my parents when I was a toddler. The idea and concept were cool, but I think the film fell flat on execution. I thought to myself numerous times that the film felt like a bunch of events strung together, and that made it difficult to feel invested in the characters. I still think it had a lot of potential. \n\nIt's jarring to see Siddharth and Surya so young. Madhavan does a great job at playing a villain; it's very easy to dislike and denigrate his character from the outset.\n\n## Games\n\nI decided to try out *Castlevania: Aria of Sorrow*. I finished the game with the bad ending and the normal ending. I got stuck in the endgame area, without any potions, and no way to go back. So, I decided to start a new game. I'm not sure if I'll stick with it till completion this time. I thoroughly enjoyed this game, but I tanked my way through it with the help of potions. I wish I was more deft and graceful. Maybe in this new run. Now that I'm done with my first game in the series, I've decided to watch the show on Netflix.\n\n## Books\n\nLast month, I was halfway through *A Happy Death* by Camus. But I ended up losing steam and didn't feel like picking it up again. Instead, I decided to pick something else from my catalogue that seemed more enticing, Taleb's *Fooled by Randomness*. To my surprise, I'm enjoying it so far. I hope to pick up some vampire books in the future. Maybe I'll start with *Salem's Lot*?",
+        "metadata": {
+          "date": "2025-06-01T21:52:00+05:30",
+          "slug": "",
+          "categories": [],
+          "title": "May 2025",
+          "summary": "Found a new pickup group to play badminton with, fell sick, met my senior from college, had a cyst near my tailbone, watched movies, and played my first Castlevania game.",
+          "others": {
+            "date-edited": "2025-06-05T23:03:00+05:30"
+          }
+        }
+      }
+    ],
+    "files": [],
+    "links": [
+      {
+        "path": "/now/apr-2025",
+        "label": "April 2025",
+        "live": true,
+        "metadata": {
+          "date": "2025-05-01T23:03:00+05:30",
+          "slug": "",
+          "categories": [],
+          "title": "April 2025",
+          "summary": "My cousin sister visited us from BLR after her board exams, watched a couple of movies in the theatres, went to a bookstore, went to BLR, attended the Zig India Meetup, visited friends, and visited Coorg briefly with my family.",
+          "others": {
+            "date-edited": "2025-06-30T14:36:00+05:30"
+          }
+        },
+        "links": []
+      },
+      {
+        "path": "/now/may-2025",
+        "label": "May 2025",
+        "live": true,
+        "metadata": {
+          "date": "2025-06-01T21:52:00+05:30",
+          "slug": "",
+          "categories": [],
+          "title": "May 2025",
+          "summary": "Found a new pickup group to play badminton with, fell sick, met my senior from college, had a cyst near my tailbone, watched movies, and played my first Castlevania game.",
+          "others": {
+            "date-edited": "2025-06-05T23:03:00+05:30"
+          }
+        },
+        "links": []
+      }
+    ]
+  },
+  "test": {
+    "name": "Test",
+    "location": "content/test",
+    "path": "/test",
+    "content": "This is the root page for testing.",
+    "metadata": {
+      "date": "0001-01-01T00:00:00Z",
+      "slug": "",
+      "categories": [],
+      "title": "Test",
+      "summary": "This is a test page",
+      "index": 5
+    },
+    "categories": [],
+    "artifacts": [
+      {
+        "name": "Nested Test",
+        "location": "content/test/nested",
+        "path": "/test/nested",
+        "content": "This is the nested page for testing.",
+        "metadata": {
+          "date": "0001-01-01T00:00:00Z",
+          "slug": "",
+          "categories": [],
+          "title": "Nested Test",
+          "summary": "This is a test page",
+          "index": 5
+        },
+        "categories": [],
+        "artifacts": [
+          {
+            "name": "Subnested",
+            "location": "content/test/nested/sub-nested",
+            "path": "/test/nested/sub-nested",
+            "content": "This is the subnested page for testing.",
+            "metadata": {
+              "date": "0001-01-01T00:00:00Z",
+              "slug": "",
+              "categories": [],
+              "title": "Subnested",
+              "summary": "This is a test page",
+              "index": 5
+            },
+            "categories": [],
+            "artifacts": [
+              {
+                "name": "SubSubnested",
+                "location": "content/test/nested/sub-nested/sub-sub-nested",
+                "path": "/test/nested/sub-nested/sub-sub-nested",
+                "content": "This is the subnested page for testing.",
+                "metadata": {
+                  "date": "0001-01-01T00:00:00Z",
+                  "slug": "",
+                  "categories": [],
+                  "title": "SubSubnested",
+                  "summary": "This is a test page",
+                  "index": 5
+                },
+                "categories": [],
+                "artifacts": [],
+                "files": [],
+                "links": []
+              }
+            ],
+            "files": [],
+            "links": [
+              {
+                "path": "/test/nested/sub-nested/sub-sub-nested",
+                "label": "SubSubnested",
+                "live": true,
+                "metadata": {
+                  "date": "0001-01-01T00:00:00Z",
+                  "slug": "",
+                  "categories": [],
+                  "title": "SubSubnested",
+                  "summary": "This is a test page",
+                  "index": 5
+                },
+                "links": []
+              }
+            ]
+          }
+        ],
+        "files": [],
+        "links": [
+          {
+            "path": "/test/nested/sub-nested",
+            "label": "Subnested",
+            "live": true,
+            "metadata": {
+              "date": "0001-01-01T00:00:00Z",
+              "slug": "",
+              "categories": [],
+              "title": "Subnested",
+              "summary": "This is a test page",
+              "index": 5
+            },
+            "links": [
+              {
+                "path": "/test/nested/sub-nested/sub-sub-nested",
+                "label": "SubSubnested",
+                "live": true,
+                "metadata": {
+                  "date": "0001-01-01T00:00:00Z",
+                  "slug": "",
+                  "categories": [],
+                  "title": "SubSubnested",
+                  "summary": "This is a test page",
+                  "index": 5
+                },
+                "links": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "files": [],
+    "links": [
+      {
+        "path": "/test/nested",
+        "label": "Nested Test",
+        "live": true,
+        "metadata": {
+          "date": "0001-01-01T00:00:00Z",
+          "slug": "",
+          "categories": [],
+          "title": "Nested Test",
+          "summary": "This is a test page",
+          "index": 5
+        },
+        "links": [
+          {
+            "path": "/test/nested/sub-nested",
+            "label": "Subnested",
+            "live": true,
+            "metadata": {
+              "date": "0001-01-01T00:00:00Z",
+              "slug": "",
+              "categories": [],
+              "title": "Subnested",
+              "summary": "This is a test page",
+              "index": 5
+            },
+            "links": [
+              {
+                "path": "/test/nested/sub-nested/sub-sub-nested",
+                "label": "SubSubnested",
+                "live": true,
+                "metadata": {
+                  "date": "0001-01-01T00:00:00Z",
+                  "slug": "",
+                  "categories": [],
+                  "title": "SubSubnested",
+                  "summary": "This is a test page",
+                  "index": 5
+                },
+                "links": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "yorozuya": {
+    "name": "Yorozuya",
+    "location": "content/yorozuya",
+    "path": "/yorozuya",
+    "content": "I'm a huge proponent of the web's underlying mechanism of serendipity. I believe that sharing more about myself on the internet can lead to chance encounters. I hope that this page can help me establish project-specific relationships with you. If you're doing something that aligns with what I've listed out in the [`/about/me`](/about/me) and [`/now`](/now) pages, it's likely that we'd enjoy working together!\n\nInspired by [Gintoki](https://gintama.fandom.com/wiki/Yorozuya_Gin-chan), this page is where I set up shop. *Yorozuya* in Japanese roughly translates to \"a house that does all sorts of odd jobs\". I find this apt (and humorous) because I too don't have a set of skills that I can neatly package into a service and offer to you. But, on the other hand, I'm trying to be more selective about the gigs that come my way. I only consider working on a project if I feel strongly about it and I'm confident that I  can contribute in its current state. \n\nI also ardently want to collaborate with others and I want to do it more frequently. That's why I want you to get a feel of what it's like to have me as a collaborator. Below, I've tried to:\n\n- introduce what I do professionally\n- share my strengths and interests\n\n\u003cdiv class=\"cards-col-container\"\u003e\n  \u003csection class=\"card-section\"\u003e\n    \u003cdiv class=\"card-heading\"\u003eWhat can I do for you?\u003c/div\u003e\n    \u003cp\u003e\u003cstrong\u003eAre you looking to build a software product? One that people love interacting with and find themselves re-visiting often?\u003c/strong\u003e The best products often borrow from world-building principles and have their own languages within the context of the project. Users are progressively familiarized with this language, and the intricacies are introduced gradually. Such products view design and engineering as two sides of the same coin.\u003c/p\u003e\n    \u003cp\u003eSo far, I have:\u003c/p\u003e\n    \u003cul\u003e\n      \u003cli\u003eHelped build the frontend and UI system of a \u003ca href=\"https://farcaster.xyz/~/channel/castmoney\" target=\"_blank\"\u003esocial DeFi product\u003c/a\u003e that won at the \u003ca href=\"https://devfolio.co/projects/castmoney-feed-cc53\" target=\"_blank\"\u003eBased India Hackathon\u003c/a\u003e\u003c/li\u003e\n      \u003cli\u003eHelped build NFL fantasy tools that have amassed thousands of visitors daily, with \u003ca href=\"https://www.reddit.com/r/Chargers/comments/1iesblj/pfn_mock_offseason_bored_at_work_let_me_know_what/\" target=\"_blank\"\u003egreat reviews\u003c/a\u003e \u003ca href=\"https://www.reddit.com/r/Chargers/comments/1iigdxc/simulated_offseason_analysis/\" target=\"_blank\"\u003efrom fanatics\u003c/a\u003e\u003c/li\u003e\n      \u003cli\u003eHelped build a telemedicine app for doctors to continue their practice online during COVID\u003c/li\u003e\n    \u003c/ul\u003e\n  \u003c/section\u003e\n\u003c/div\u003e\n\u003cdiv class=\"cards-2-grid\"\u003e\n  \u003cdiv class=\"cards-col-container\"\u003e\n    \u003csection class=\"card-section\"\u003e\n      \u003cdiv class=\"card-heading\"\u003eStrengths\u003c/div\u003e\n      \u003cul\u003e\n        \u003cli\u003e\u003cstrong\u003eMaking websites and web applications\u003c/strong\u003e that are delightful to use, well-optimized, and easy to maintain. I'm stack-agnostic. In fact, I've built plenty of applications in vanilla JS, although my preferred tool these days is Svelte.\u003c/li\u003e\n        \u003cli\u003e\u003cstrong\u003eCreating cinematic 3D sequences (and basic video editing)\u003c/strong\u003e - If you're looking to make trailers or short films, I have experience with making \u003ca href=\"https://youtube.com/playlist?list=PLHB0fdOUMX-3BFOQxV1vJPTAW4OsNEk5j\u0026si=fKiuTul7EveXkdkN\" target=\"_blank\"\u003esmall scenes in Unreal\u003c/a\u003e.\u003c/li\u003e\n        \u003cli\u003e\u003cstrong\u003ePrototyping games\u003c/strong\u003e, deciding which platform to launch on, doing research, designing mechanics and game loops, building game systems, and writing documentation.\u003c/li\u003e\n        \u003cli\u003e\u003cstrong\u003eAnything badminton related\u003c/strong\u003e; be it organizing a tournament, hosting pick-up games, tying grips for your racquets, sparring, or teaching someone how to play.\u003c/li\u003e\n        \u003cli\u003e\u003cstrong\u003eWriting\u003c/strong\u003e essays, documentation, stories, or even copy for your website.\u003c/li\u003e\n        \u003cli\u003e\u003cstrong\u003eCreating software tools and little libraries\u003c/strong\u003e for static-site-generation (SSG), sophisticated UI components, etc. Anything that helps the end user/developer.\u003c/li\u003e\n      \u003c/ul\u003e\n    \u003c/section\u003e\n  \u003c/div\u003e\n  \u003cdiv class=\"cards-col-container\"\u003e\n    \u003csection class=\"card-section\"\u003e\n      \u003cdiv class=\"card-heading\"\u003eInterests\u003c/div\u003e\n      \u003cul\u003e\n        \u003cli\u003e\u003cstrong\u003eOrganizing events\u003c/strong\u003e, tournaments, meetups, pickup games, house parties, etc.\u003c/li\u003e\n        \u003cli\u003e\u003cstrong\u003eInterpreters and compilers\u003c/strong\u003e - I've a newfound obsession with programming language theory (PLT) and I'm looking for interesting opportunities in the space. It's been explored by people who are smarter and more invested than I am. But, there are still many domains in which these principles and techniques can be applied to improve the experience of users. In the future, I'd love to contribute to Svelte.\u003c/li\u003e\n        \u003cli\u003e\u003cstrong\u003eGames and tooling\u003c/strong\u003e - I'm particularly interested in the Metroidvania genre and games that have non-linear progression. Another idea that I'd like to work on in the future is a game-making framework built on top of Raylib.\u003c/li\u003e\n        \u003cli\u003e\u003cstrong\u003eSoftware products\u003c/strong\u003e of all sorts. An idea I'm currently keen on exploring personally is RSS readers. But, I'm open to working on any creative idea.\u003c/li\u003e\n        \u003cli\u003e\u003cstrong\u003eWorking on media projects\u003c/strong\u003e in all formats ranging from writing blogs, essays, stories, videos, devlogs, games, etc.\u003c/li\u003e\n        \u003cli\u003e\u003cstrong\u003eForming small groups\u003c/strong\u003e of committed friends/peers for niche interests: study groups, collaborators for projects, pick-up groups for sports, etc.\u003c/li\u003e\n      \u003c/ul\u003e\n    \u003c/section\u003e\n  \u003c/div\u003e\n\u003c/div\u003e",
+    "metadata": {
+      "date": "0001-01-01T00:00:00Z",
+      "slug": "",
+      "categories": [],
+      "title": "Yorozuya",
+      "summary": "I set up shop here for all sorts of odd jobs (T\u0026C apply) and attempt to make a case for why you should collaborate with me for your next project.",
+      "index": 2
+    },
+    "categories": [],
+    "artifacts": [],
+    "files": [],
+    "links": []
+  }
+}
