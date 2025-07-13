@@ -106,11 +106,11 @@ func (c *Controller) getAdjacentLiveLink(alias string, currentPath string, next 
 	var startPoint, endPoint int
 
 	if next {
-		startPoint = currentIndex + 1
-		endPoint = len(*links) - 1
-	} else {
 		startPoint = currentIndex - 1
 		endPoint = 0
+	} else {
+		startPoint = currentIndex + 1
+		endPoint = len(*links) - 1
 	}
 
 	if startPoint < 0 || startPoint >= len(*links) {
@@ -123,9 +123,9 @@ func (c *Controller) getAdjacentLiveLink(alias string, currentPath string, next 
 			return link
 		}
 		if next {
-			i++
-		} else {
 			i--
+		} else {
+			i++
 		}
 	}
 

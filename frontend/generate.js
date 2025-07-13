@@ -161,7 +161,7 @@ function getArtifactData(artifact) {
     const prevArtifact = artifact.prev;
     artifactData.prev = {
       path: prevArtifact.path,
-      name: prevArtifact.name,
+      name: prevArtifact.label,
     };
   }
 

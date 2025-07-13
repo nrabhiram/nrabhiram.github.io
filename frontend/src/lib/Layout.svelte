@@ -88,6 +88,8 @@
     initializeTheme();
     // initializeNavDrawerState();
   });
+
+  console.log("DEBUG LINKS", prevLink, nextLink);
 </script>
 
 <svelte:window 
