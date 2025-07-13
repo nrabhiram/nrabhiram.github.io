@@ -152,7 +152,7 @@ func sortChildren(children *[]file.IFile) {
 		datesExist := aDate != nil && bDate != nil
 
 		if datesExist && !aDate.Equal(*bDate) {
-			return aDate.Before(*bDate)
+			return aDate.After(*bDate)
 		}
 
 		aName, bName := getTitleOrName(a), getTitleOrName(b)
