@@ -124,6 +124,11 @@
   }
 }
 
+.custom-scrollbar {
+  scrollbar-color: var(--color-scrollbar) transparent;
+  scrollbar-width: thin;
+}
+
 .cards-2-grid {
   @apply flex gap-4 my-4 flex-col lg:flex-row;
 }
@@ -222,6 +227,7 @@
   --color-secondary: #336A83;
   --color-tertiary: #836233;
   --color-pale: #BD8A44;
+  --color-scrollbar: #a4a9adbd;
 }
 
 .dark {
@@ -229,6 +235,7 @@
   --color-secondary: #E8CF7B;
   --color-tertiary: #F4FBFF;
   --color-pale: #d9e0e4;
+  --color-scrollbar: #d9e0e490;
 }
 
 code[class*="language-"],
