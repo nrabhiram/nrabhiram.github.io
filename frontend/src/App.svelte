@@ -29,6 +29,7 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="alternate" type="application/atom+xml" title="Posts & Logs" href={`${VAXITAS_BASE_URL}/feed.atom`}>
   <meta property="og:title" content={title}>
   {#if artifact?.summary}
     <meta property="og:description" content={artifact.summary}>
