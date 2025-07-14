@@ -24,8 +24,8 @@ async function readSchema() {
   const artifactsPath = path.resolve(__dirname, '../artifacts/artifacts.json');
   const schemaPath = path.resolve(__dirname, '../artifacts/schema.json');
   
-  const artifactsJSON = await fs.readFile(artifactsPath, 'utf-8');
-  const schemaJSON = await fs.readFile(schemaPath, 'utf-8');
+  const artifactsJSON = await fs.readFile(artifactsPath, { encoding: 'utf8' });
+  const schemaJSON = await fs.readFile(schemaPath, { encoding: 'utf8' });
 
   const artifacts = JSON.parse(artifactsJSON);
   const schema = JSON.parse(schemaJSON);
@@ -146,7 +146,7 @@ function getArtifactData(artifact) {
     content: artifact.content,
     categories: artifact.metadata.categories,
     date: artifact.metadata.date,
-    dateEdited: artifact.metadata.dataEdited,
+    dateEdited: artifact.metadata.others ? artifact.metadata.others['data-edited'] : undefined,
   };
   
   if (artifact.next) {
@@ -252,6 +252,127 @@ async function copyDirRecursive(src, dest, filter = () => true) {
   }
 }
 
+function escapeXml(text) {
+  if (!text) return '';
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function stripHtmlTags(html) {
+  if (!html) return '';
+  return html
+    .replace(/<[^>]*>/g, '') // remove HTML tags
+    .replace(/\s+/g, ' ') // normalize whitespace
+    .trim();
+}
+
+function createAtomEntry(entry, siteUrl) {
+  const indentedContent = entry.htmlContent
+    .split('\n')
+    .map(line => line.trim() ? `      ${line}` : '')
+    .join('\n');
+
+  return `<entry>
+    <title>${escapeXml(entry.title)}</title>
+    <summary type="text">${escapeXml(entry.summary)}</summary>
+    <published>${entry.published}</published>
+    <updated>${entry.updated}</updated>
+    <link rel="alternate" type="text/html" href="${siteUrl}${entry.path}"/>
+    <id>${siteUrl}${entry.path}</id>
+    <content type="html">
+      <![CDATA[${indentedContent}]]>
+    </content>
+    ${entry.categories ? entry.categories.map(cat => 
+      `<category term="${escapeXml(cat)}"/>`
+    ).join('\n    ') : ''}
+  </entry>`;
+}
+
+function extractFeedEntries(feedArtifacts) {
+  const entries = [];
+  for (const artifact of feedArtifacts) {
+    const date = artifact.date;
+    const dateEdited = artifact.dateEdited;
+    const url = artifact.path;
+    let summary = artifact.summary;
+
+    if (!date) continue; // ignore entries without date
+
+    const contentType = url.startsWith('/blog') ? 'blog' : 'now';
+    // to keep things simple, not adding a check for whether content type is already a category
+    const categories = [contentType, ...(artifact.categories || [])];
+
+    if (!summary) {
+      let contentSnippet = artifact.content.length > 200 ? artifact.content.substring(0, 200) + '...' : artifact.content;
+      summary = contentSnippet;
+    }
+
+    const entry = {
+      title: artifact.name || 'Untitled',
+      path: artifact.path,
+      published: new Date(date).toISOString(),
+      updated: new Date(dateEdited || date).toISOString(),
+      summary: stripHtmlTags(summary),
+      htmlContent: artifact.content,
+      categories: categories
+    };
+
+    entries.push(entry);
+  }
+
+  entries.sort((a, b) => new Date(b.published) - new Date(a.published));
+
+  return entries;
+}
+
+function createAtomFeed(entries, feedInfo) {
+  const { title, siteUrl, feedUrl, authorName, authorEmail } = feedInfo;
+  const updatedDate = entries.length > 0 ? entries[0].updated : new Date().toISOString();
+  
+  const atomXml = `<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>${escapeXml(title)}</title>
+  <id>${feedUrl}</id>
+  <updated>${updatedDate}</updated>
+  <link href="${feedUrl}" rel="self"/>
+  <link href="${siteUrl}" rel="alternate"/>
+  <author>
+    <name>${escapeXml(authorName)}</name>
+    <email>${escapeXml(authorEmail)}</email>
+  </author>
+  ${entries.map(entry => createAtomEntry(entry, siteUrl)).join('\n  ')}
+</feed>`;
+  
+  return atomXml;
+}
+
+async function generateAtomFeed(artifacts) {
+  const siteConfig = {
+    siteUrl: 'https://vaxitas.xyz',
+    authorName: 'Abhiram Reddy',
+    authorEmail: 'abhi@vaxitas.xyz',
+  };
+
+  const entries = extractFeedEntries(artifacts);
+
+  const feedInfo = {
+    title: 'Vaxitas - Blog Posts and Monthly Logs',
+    siteUrl: siteConfig.siteUrl,
+    feedUrl: `${siteConfig.siteUrl}/feed.atom`,
+    authorName: siteConfig.authorName,
+    authorEmail: siteConfig.authorEmail
+  };
+
+  const feed = createAtomFeed(entries, feedInfo);
+  const utf8BOM = '\uFEFF'; // write with UTF-8 BOM to ensure proper encoding recognition
+  await fs.writeFile(toAbsolute('dist/static/feed.atom'), utf8BOM + feed, 'utf8');
+  console.log('Generated Atom feed at /feed.atom ✓');
+}
+
 async function generateSite() {
   try {
     try {
@@ -280,6 +401,8 @@ async function generateSite() {
     await createStaticBuildFolder();
 
     const primaryNavData = getPagePrimaryNavData(schema);
+
+    const feedArtifacts = [];
     
     // for each route, render and save as HTML file
     for (const url of routes) {
@@ -297,6 +420,11 @@ async function generateSite() {
       );
 
       const artifact = getArtifactData(compiledArtifact);
+
+      const isNowPost = url.startsWith("/now") && url !== "/now";
+      const isBlogPost = url.startsWith("/blog") && url !== "/blog";
+
+      if (isNowPost || isBlogPost) feedArtifacts.push(artifact);
 
       // the content directory is one level above this script
       await copyArtifactImages(compiledArtifact, toAbsolute('..'));
@@ -322,6 +450,10 @@ async function generateSite() {
       toAbsolute('dist/static'),
       (file) => !file.endsWith('.html')
     );
+
+    console.log("DEBUG FEED", feedArtifacts.length);
+
+    await generateAtomFeed(feedArtifacts);
     
     console.log('Static site generation is complete!');
   } catch (error) {
