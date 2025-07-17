@@ -1,20 +1,24 @@
 <script lang="ts">
-  import type { Link } from "../../../types";
-  import { cn, isBrowser, isDoublyNested, isNested } from "../../../utils";
-  import ChevronRight from "../../icons/ChevronRight.svelte";
-  import Accordion from "../../ui/Accordion/Accordion.svelte";
-  import AccordionContent from "../../ui/Accordion/AccordionContent.svelte";
+    import { onMount } from "svelte";
+  import type { Link } from "../../types";
+  import { cn, isBrowser, isDoublyNested, isNested } from "../../utils";
+  import ChevronRight from "../icons/ChevronRight.svelte";
+  import Accordion from "../ui/Accordion/Accordion.svelte";
+  import AccordionContent from "../ui/Accordion/AccordionContent.svelte";
 
   export let secondaryNavItem: Link;
   export let url: string;
   export let level = 1;
   let accordionOpen = shouldBeOpenInitially();
   let interacted = false;
+  let initialized = false;
 
   function shouldBeOpenInitially() {
-    return url.startsWith(secondaryNavItem.path + '/') || 
-           secondaryNavItem.items?.some(item => url.startsWith(item.path + '/')) ||
-           hasNestedActiveItem(secondaryNavItem.items);
+    const shouldBeOpen = url.startsWith(secondaryNavItem.path + '/') || 
+      secondaryNavItem.items?.some(item => url.startsWith(item.path + '/')) ||
+      hasNestedActiveItem(secondaryNavItem.items);
+    console.log(shouldBeOpen, secondaryNavItem.path);
+    return shouldBeOpen;
   }
   
   // Recursively check if any nested item should be active
@@ -26,6 +30,35 @@
       hasNestedActiveItem(item.items)
     );
   }
+
+  function computeAccordionsMaxHeights(url: string) {
+    if (!isBrowser) return;
+    const currentAccordion = document.querySelector(`[data-url="${url}"]`);
+    if (!currentAccordion) return;
+
+    let contentHeight = currentAccordion.scrollHeight;
+
+    let currentParent = currentAccordion.closest('.accordion-content');
+
+    while (!!currentParent) {       
+      // Found a parent accordion, update it
+      if (accordionOpen) {
+        contentHeight += currentParent.scrollHeight;
+
+        (currentParent as HTMLElement).style.maxHeight = contentHeight + 'px';
+
+      } else {
+        const openSiblings = currentParent.querySelectorAll('.accordion-content[data-open="true"]');
+        if (openSiblings.length === 0) {
+          (currentParent as HTMLElement).style.maxHeight = '0px';
+        }
+      }
+      
+      // Move up to the next parent accordion
+      const nextParent = currentParent.parentElement;
+      currentParent = nextParent ? nextParent.closest('.accordion-content') : null;
+    }
+  }
 </script>
 
 {#if secondaryNavItem.items?.length}
@@ -33,7 +66,7 @@
     open={accordionOpen}
     className={cn(
       "w-full",
-      level === 1 ? "p-2" : "pl-4 pr-2 py-1",
+      level === 1 ? "p-2" : "pl-4 pr-0 py-1",
       level > 1 && "border-l-2 border-vaxitas-pale",
       level > 1 && url === secondaryNavItem.path && "border-vaxitas-secondary",
       level > 1 && url !== secondaryNavItem.path && "hover:border-vaxitas-tertiary"
@@ -44,30 +77,7 @@
 
       if (!interacted) interacted = true;
 
-      const currentAccordion = document.querySelector(`[data-url="${secondaryNavItem.path}"]`);
-      if (!currentAccordion) return;
-
-      currentAccordion.classList.add("overflow-y-hidden");
-      
-      const allAccordionContents = document.querySelectorAll('.accordion-content');
-
-      // Find which ones contain the current accordion
-      const parentAccordions = Array.from(allAccordionContents).filter(accordion => 
-        accordion.contains(currentAccordion) && accordion !== currentAccordion
-      );
-
-      console.log(accordionOpen, parentAccordions);
-
-      parentAccordions.forEach(parent => {
-        if (accordionOpen) {
-          parent.classList.remove('overflow-y-hidden');
-        } else {
-          const openSiblings = parent.querySelectorAll('.accordion-content[data-open="true"]');
-          if (openSiblings.length === 0) {
-            parent.classList.add('overflow-y-hidden');
-          }
-        }
-      });
+      computeAccordionsMaxHeights(secondaryNavItem.path);
     }}
   >
     <svelte:fragment 
@@ -78,7 +88,7 @@
       <div class="w-full shrink-0 cursor-pointer flex items-center justify-between group">
         <a 
           class={cn(
-            "no-underline text-vaxitas-pale grow",
+            "no-underline text-vaxitas-pale grow block",
             url === secondaryNavItem.path && "text-vaxitas-secondary",
             url !== secondaryNavItem.path && "group-hover:text-vaxitas-tertiary",
             level === 2 && "text-sm",
@@ -111,7 +121,10 @@
         animDuration={animDuration} 
         disableAnim={disableAnim}
         contentIdAttr={secondaryNavItem.path}
-        className={accordionOpen ? (interacted ? "overflow-y-hidden" : "") : "overflow-y-hidden"}
+        className={cn(
+          "overflow-x-clip",
+          accordionOpen ? (interacted ? "overflow-y-hidden" : "overflow-x-hidden") : "overflow-y-hidden"
+        )}
       >
         {#each secondaryNavItem.items as subNavItem}
           <svelte:self 
@@ -126,7 +139,7 @@
 {:else}
   <a 
     class={cn(
-      "w-full no-underline text-vaxitas-pale shrink-0 cursor-pointer",
+      "w-full no-underline text-vaxitas-pale shrink-0 cursor-pointer block",
       url === secondaryNavItem.path && "text-vaxitas-secondary border-vaxitas-secondary",
       url !== secondaryNavItem.path && "hover:text-vaxitas-tertiary hover:border-vaxitas-tertiary",
       level === 1 ? "p-2" : "pl-4 pr-2 py-1",

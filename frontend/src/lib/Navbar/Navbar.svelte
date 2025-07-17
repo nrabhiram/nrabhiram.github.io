@@ -1,11 +1,12 @@
 <script lang="ts">
   import { createEventDispatcher } from "svelte";
-  import DesktopNav from "./DesktopNav/DesktopNav.svelte";
+  import DesktopNav from "./DesktopNav.svelte";
   import MobileNav from "./MobileNav.svelte";
   import type { Link } from "../../types";
-  import { getLocalStorage, isBasePath, setLocalStorage, VAXITAS_LS_DRAWER_KEY } from "../../utils";
+  import { isBasePath } from "../../utils";
 
   export let isDrawerOpen: boolean;
+  export let isMobileDrawerOpen: boolean;
   export let disableDrawerAnim: boolean;
   export let primaryNavData: Link[];
   export let secondaryNavData: Link | null = null;
@@ -29,18 +30,19 @@
 
   function openSecondaryDrawer() {
     isSecondaryNavOpen = true;
-    // setLocalStorage(VAXITAS_LS_DRAWER_KEY, "true");
   }
   
   function closeSecondaryDrawer() {
     isSecondaryNavOpen = false;
-    // setLocalStorage(VAXITAS_LS_DRAWER_KEY, "false");
   }
 </script>
 
 {#if !deviceType || deviceType === 'mobile'}
   <MobileNav 
-    isDrawerOpen={isDrawerOpen}
+    isDrawerOpen={isMobileDrawerOpen}
+    primaryNavData={primaryNavData} 
+    secondaryNavData={secondaryNavData} 
+    url={url}
     on:closeDrawer={closeDrawer}
     on:toggleDrawer={toggleDrawer}
   />

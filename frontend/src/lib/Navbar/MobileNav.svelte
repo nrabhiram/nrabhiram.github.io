@@ -1,9 +1,15 @@
 <script lang="ts">
   import { createEventDispatcher } from "svelte";
-  import { cn } from '../../utils';
+  import { cn, isPrimaryNavLinkActive } from '../../utils';
   import {  DrawerContainer, Drawer, DrawerOverlay } from '../ui/Drawer';
+  import type { Link } from "../../types";
+  import SecondaryNavItem from "./SecondaryNavItem.svelte";
+    import PrimaryNavItem from "./PrimaryNavItem.svelte";
 
   export let isDrawerOpen: boolean = true;
+  export let primaryNavData: Link[];
+  export let secondaryNavData: Link | null = null;
+  export let url: string;
 
   const dispatch = createEventDispatcher();
 
@@ -49,13 +55,29 @@
       toggleDrawer={toggleDrawer}
       disableAnim={disableAnim}
       className={cn(
-        "relative h-screen w-4/5 bg-vaxitas-primary",
+        "relative h-screen w-4/5 bg-vaxitas-primary flex flex-col gap-2 p-2",
       )}
     >
       <svelte:fragment>
-        <!-- <div class="w-full h-full p-2">
-          <button class="p-2 rounded-md bg-teal-500 text-white w-full" on:click={() => secondaryNavOpen = !secondaryNavOpen}>Toggle</button>
-        </div> -->
+        {#each primaryNavData as primaryNavItem}
+          {#if secondaryNavData && secondaryNavData.path === primaryNavItem.path}
+            <SecondaryNavItem 
+              secondaryNavItem={secondaryNavData}
+              url={url}
+              on:click={(e) => {
+                if (url === secondaryNavData.path) {
+                  e.preventDefault();
+                  return;
+                }
+              }}
+            />
+          {:else}
+            <PrimaryNavItem 
+              primaryNavItem={primaryNavItem}
+              selected={isPrimaryNavLinkActive(url, primaryNavItem.path)}
+            />
+          {/if}
+        {/each}
       </svelte:fragment>
     </Drawer>
   </svelte:fragment>

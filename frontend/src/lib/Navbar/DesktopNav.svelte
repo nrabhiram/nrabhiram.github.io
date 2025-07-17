@@ -1,9 +1,9 @@
 <script lang="ts">
   import { createEventDispatcher } from "svelte";
-  import { cn, isPrimaryNavLinkActive } from '../../../utils';
-  import { ChevronDoubleLeft, ChevronDoubleRight, Cross } from '../../icons';
-  import {  DrawerContainer, Drawer } from '../../ui/Drawer';
-  import type { Link } from "../../../types";
+  import { cn, isPrimaryNavLinkActive } from '../../utils';
+  import { ChevronDoubleLeft, ChevronDoubleRight, Cross } from '../icons';
+  import {  DrawerContainer, Drawer } from '../ui/Drawer';
+  import type { Link } from "../../types";
   import PrimaryNavItem from "./PrimaryNavItem.svelte";
   import SecondaryNavItem from "./SecondaryNavItem.svelte";
   
