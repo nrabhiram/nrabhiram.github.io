@@ -1,7 +1,6 @@
 <script lang="ts">
-    import { onMount } from "svelte";
   import type { Link } from "../../types";
-  import { cn, isBrowser, isDoublyNested, isNested } from "../../utils";
+  import { cn, isBrowser } from "../../utils";
   import ChevronRight from "../icons/ChevronRight.svelte";
   import Accordion from "../ui/Accordion/Accordion.svelte";
   import AccordionContent from "../ui/Accordion/AccordionContent.svelte";
@@ -15,13 +14,11 @@
 
   function shouldBeOpenInitially() {
     const shouldBeOpen = url.startsWith(secondaryNavItem.path + '/') || 
-      secondaryNavItem.items?.some(item => url.startsWith(item.path + '/')) ||
       hasNestedActiveItem(secondaryNavItem.items);
-    console.log(shouldBeOpen, secondaryNavItem.path);
     return shouldBeOpen;
   }
   
-  // Recursively check if any nested item should be active
+  // recursively check if any nested item should be active
   function hasNestedActiveItem(items?: Link[]): boolean {
     if (!items) return false;
     return items.some(item => 
@@ -33,28 +30,25 @@
 
   function computeAccordionsMaxHeights(url: string) {
     if (!isBrowser) return;
+    
     const currentAccordion = document.querySelector(`[data-url="${url}"]`);
     if (!currentAccordion) return;
-
     let contentHeight = currentAccordion.scrollHeight;
-
     let currentParent = currentAccordion.closest('.accordion-content');
 
     while (!!currentParent) {       
-      // Found a parent accordion, update it
+      // found a parent accordion, update its height
       if (accordionOpen) {
         contentHeight += currentParent.scrollHeight;
-
         (currentParent as HTMLElement).style.maxHeight = contentHeight + 'px';
-
       } else {
-        const openSiblings = currentParent.querySelectorAll('.accordion-content[data-open="true"]');
-        if (openSiblings.length === 0) {
+        const openChildren = currentParent.querySelectorAll('.accordion-content[data-open="true"]');
+        if (openChildren.length === 0) {
           (currentParent as HTMLElement).style.maxHeight = '0px';
         }
       }
       
-      // Move up to the next parent accordion
+      // move up to the next parent accordion
       const nextParent = currentParent.parentElement;
       currentParent = nextParent ? nextParent.closest('.accordion-content') : null;
     }
@@ -74,9 +68,7 @@
     animDuration={200}
     on:toggleAccordion={() => {
       accordionOpen = !accordionOpen;
-
       if (!interacted) interacted = true;
-
       computeAccordionsMaxHeights(secondaryNavItem.path);
     }}
   >
@@ -95,6 +87,7 @@
             level > 2 && "text-xs"
           )}
           href={secondaryNavItem.path}
+          on:click
         >
           {secondaryNavItem.name}
         </a>
@@ -123,7 +116,7 @@
         contentIdAttr={secondaryNavItem.path}
         className={cn(
           "overflow-x-clip",
-          accordionOpen ? (interacted ? "overflow-y-hidden" : "overflow-x-hidden") : "overflow-y-hidden"
+          accordionOpen ? (interacted ? "overflow-y-hidden" : "") : "overflow-y-hidden"
         )}
       >
         {#each secondaryNavItem.items as subNavItem}

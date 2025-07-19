@@ -2,8 +2,6 @@
   import type { Artifact } from "../../types";
 
   export let artifact: Artifact | null = null;
-
-  console.log("DEBUG 1234", artifact?.next, artifact?.prev);
 </script>
 
 <main>

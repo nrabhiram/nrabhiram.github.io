@@ -1,10 +1,10 @@
 <script lang="ts">
   import { createEventDispatcher } from "svelte";
   import { cn, isPrimaryNavLinkActive } from '../../utils';
-  import {  DrawerContainer, Drawer, DrawerOverlay } from '../ui/Drawer';
+  import { DrawerContainer, Drawer, DrawerOverlay } from '../ui/Drawer';
   import type { Link } from "../../types";
   import SecondaryNavItem from "./SecondaryNavItem.svelte";
-    import PrimaryNavItem from "./PrimaryNavItem.svelte";
+  import PrimaryNavItem from "./PrimaryNavItem.svelte";
 
   export let isDrawerOpen: boolean = true;
   export let primaryNavData: Link[];
@@ -67,6 +67,7 @@
               on:click={(e) => {
                 if (url === secondaryNavData.path) {
                   e.preventDefault();
+                  closeDrawer();
                   return;
                 }
               }}
@@ -75,6 +76,11 @@
             <PrimaryNavItem 
               primaryNavItem={primaryNavItem}
               selected={isPrimaryNavLinkActive(url, primaryNavItem.path)}
+              on:click={(e) => {
+                if (url !== primaryNavItem.path) return;
+                e.preventDefault();
+                closeDrawer();
+              }}
             />
           {/if}
         {/each}

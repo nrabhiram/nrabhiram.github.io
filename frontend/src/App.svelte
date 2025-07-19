@@ -1,10 +1,8 @@
 <!-- App.svelte -->
 <script lang="ts">
   import Layout from "./lib/Layout.svelte";
-  import Home from "./lib/Templates/Home.svelte";
-    import MainPage from "./lib/Templates/MainPage.svelte";
-    import PostPage from "./lib/Templates/PostPage.svelte";
-  import Test from "./lib/Templates/Test.svelte";
+  import MainPage from "./lib/templates/MainPage.svelte";
+  import PostPage from "./lib/templates/PostPage.svelte";
   import type { Artifact, Link } from "./types";
   import { getPageTitle, matchesPath, VAXITAS_BASE_URL } from "./utils";
 
@@ -51,7 +49,7 @@
     <meta property="og:updated_time" content={artifact.dateEdited}>
   {/if}
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:creator" content="@vaxitasxyz">
+  <meta name="twitter:creator" content="@nrabhiram">
   <meta name="twitter:title" content={title}>
   {#if artifact?.summary}
     <meta name="twitter:description" content={artifact.summary}>

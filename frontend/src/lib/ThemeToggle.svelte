@@ -27,17 +27,17 @@
   };
 
   const config = { 
-    duration: 1000,  // Increased duration for more noticeable bounce
+    duration: 1000,  // increased duration for more noticeable bounce
     easing: elasticOut
   };
 
-  // For opacity, we'll use a shorter duration without bounce
+  // for opacity, we'll use a shorter duration without bounce
   const fastConfig = {
     duration: 400,
     easing: elasticOut
   };
 
-  // Create Tween instances for each property
+  // create Tween instances for each property
   const r = new Tween(properties.sun.r, config);
   const transform = new Tween(properties.sun.transform, config);
   const cx = new Tween(properties.sun.cx, config);
@@ -53,7 +53,7 @@
     opacity.set(currentProps.opacity);
   }
   
-  // Get the current color based on theme
+  // get the current color based on theme
   $: currentThemeColor = isDarkMode ? "#E8CF7B" : "#336A83";
 </script>
 

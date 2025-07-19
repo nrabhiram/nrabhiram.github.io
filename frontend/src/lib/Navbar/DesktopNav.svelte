@@ -2,7 +2,7 @@
   import { createEventDispatcher } from "svelte";
   import { cn, isPrimaryNavLinkActive } from '../../utils';
   import { ChevronDoubleLeft, ChevronDoubleRight, Cross } from '../icons';
-  import {  DrawerContainer, Drawer } from '../ui/Drawer';
+  import { DrawerContainer, Drawer } from '../ui/Drawer';
   import type { Link } from "../../types";
   import PrimaryNavItem from "./PrimaryNavItem.svelte";
   import SecondaryNavItem from "./SecondaryNavItem.svelte";
@@ -13,8 +13,6 @@
   export let primaryNavData: Link[];
   export let secondaryNavData: Link | null = null;
   export let url: string;
-  let showHideSecondaryNavBtn: boolean = false;
-  let transitionTimerId: number | undefined;
 
   const dispatch = createEventDispatcher();
 
@@ -32,15 +30,6 @@
   
   function closeSecondaryDrawer() {
     dispatch('closeSecondaryDrawer');
-  }
-
-  $: if (secondaryNavOpen) {
-    transitionTimerId = setTimeout(() => {
-      showHideSecondaryNavBtn = true;
-    }, 200);
-  } else {
-    clearTimeout(transitionTimerId);
-    showHideSecondaryNavBtn = false;
   }
 </script>
 
@@ -77,7 +66,7 @@
         toggleDrawer={toggleDrawer}
         disableAnim={disableAnim}
         className={cn(
-          "relative sm:block hidden h-screen w-0",
+          "relative lg:block hidden h-screen w-0",
           isDrawerOpen && "lg:w-56 2xl:w-72 border-r-2 border-vaxitas-tertiary"
         )}
         drawerId="desktop-nav"
@@ -100,7 +89,7 @@
         <svelte:fragment slot="toggle" let:open={open} let:toggleDrawer={toggleDrawer}>
           <button 
             class={cn(
-              "absolute top-6 translate-x-full translate-y-full border-2 border-l-0 border-vaxitas-tertiary p-1 rounded-r-md  transition-all z-[1]",
+              "absolute top-6 translate-x-full translate-y-full border-2 border-l-0 border-vaxitas-tertiary p-1 rounded-r-md transition-all z-[1]",
               isDrawerOpen && secondaryNavOpen ? "lg:-right-80 xl:-right-96" : "right-0"
             )}
             aria-label="toggle-primary-nav-drawer"

@@ -71,7 +71,7 @@
     includeOverlay && "relative h-screen w-screen",
     !includeOverlay && "h-full",
     !includeOverlay && !open && "w-0 overflow-hidden",
-    !includeOverlay && !disableAnim && "transition-all ",
+    !includeOverlay && !disableAnim && "transition-all",
     !includeOverlay && className
   )}
   style={!includeOverlay ? transitionStyle : ''}

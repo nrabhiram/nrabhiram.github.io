@@ -1,11 +1,11 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { ThemeStore } from "../stores/theme";
-  import { cn, getLocalStorage, setLocalStorage, VAXITAS_LS_DRAWER_KEY, VAXITAS_LS_THEME_KEY } from "../utils";
+  import { getLocalStorage, setLocalStorage, VAXITAS_LS_THEME_KEY } from "../utils";
   import { Navbar } from "./Navbar";
   import ThemeToggle from "./ThemeToggle.svelte";
   import type { AdjacentLink, Link } from "../types";
-    import ThreeBars from "./icons/ThreeBars.svelte";
+  import ThreeBars from "./icons/ThreeBars.svelte";
 
   const defaultTheme = typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   export let primaryNavData: Link[];

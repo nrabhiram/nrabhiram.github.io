@@ -451,8 +451,6 @@ async function generateSite() {
       (file) => !file.endsWith('.html')
     );
 
-    console.log("DEBUG FEED", feedArtifacts.length);
-
     await generateAtomFeed(feedArtifacts);
     
     console.log('Static site generation is complete!');
