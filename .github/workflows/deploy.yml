@@ -45,6 +45,11 @@ jobs:
         cd frontend
         npm ci
 
+    - name: Create required directories
+      run: |
+        mkdir -p bin
+        mkdir -p artifacts
+
     - name: Build schema and artifacts data for the site
       run: |
         REPO_PATHS=$(ls -d content/*/ | tr '\n' ',' | sed 's/,$//')
