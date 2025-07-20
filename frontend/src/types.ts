@@ -9,10 +9,12 @@ interface Link {
 interface Artifact {
   name: string;
   summary: string;
+  content?: string;
   path: string;
   categories?: string[];
   date: string;
   dateEdited?: string;
+  files?: any[];
   prev?: Link;
   next?: Link;
 }
