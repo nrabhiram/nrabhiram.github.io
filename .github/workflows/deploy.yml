@@ -55,17 +55,6 @@ jobs:
         REPO_PATHS=$(ls -d content/*/ | tr '\n' ',' | sed 's/,$//')
         make run COMMAND=build REPO_PATHS=$REPO_PATHS OUTPUT=artifacts
 
-    - name: Debug frontend files
-      run: |
-        echo "=== Current directory ==="
-        pwd
-        echo "=== Frontend structure ==="
-        find frontend/src -name "*.svelte" | head -20
-        echo "=== Checking specific file ==="
-        ls -la frontend/src/lib/templates/MainPage.svelte || echo "MainPage.svelte NOT FOUND"
-        echo "=== App.svelte content (first 20 lines) ==="
-        head -20 frontend/src/App.svelte
-
     - name: Build frontend
       run: |
         cd frontend

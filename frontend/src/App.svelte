@@ -1,8 +1,8 @@
 <!-- App.svelte -->
 <script lang="ts">
   import Layout from "./lib/Layout.svelte";
-  import MainPage from "./lib/templates/MainPage.svelte";
-  import PostPage from "./lib/templates/PostPage.svelte";
+  import MainPage from "./lib/views/MainPage.svelte";
+  import PostPage from "./lib/views/PostPage.svelte";
   import type { Artifact, Link } from "./types";
   import { getPageTitle, matchesPath, VAXITAS_BASE_URL } from "./utils";
 
