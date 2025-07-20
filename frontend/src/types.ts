@@ -10,7 +10,6 @@ interface Artifact {
   name: string;
   summary: string;
   path: string;
-  content: string;
   categories?: string[];
   date: string;
   dateEdited?: string;

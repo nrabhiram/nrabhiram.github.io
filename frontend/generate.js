@@ -213,12 +213,13 @@ function createHydrationDataScript(primaryNavData, secondaryNavData, url, artifa
   `;
 }
 
-function getPageHTML(template, rendered, scripts) {
+function getPageHTML(template, rendered, scripts, content) {
   const { themeScript, dataScript } = scripts;
   const html = template
     .replace('<!--app-theme-->', themeScript)
     .replace('<!--app-head-->', rendered.head + (dataScript || ''))
-    .replace('<!--app-html-->', rendered.html || '');
+    .replace('<!--app-html-->', rendered.html || '')
+    .replace(/(<[^>]+id="content"[^>]*>)/, `$1${content || ''}`);
   return html;
 }
 
@@ -420,6 +421,7 @@ async function generateSite() {
       );
 
       const artifact = getArtifactData(compiledArtifact);
+      const { content, ...artifactWithoutContent } = artifact;
 
       const isNowPost = url.startsWith("/now") && url !== "/now";
       const isBlogPost = url.startsWith("/blog") && url !== "/blog";
@@ -434,10 +436,15 @@ async function generateSite() {
         primaryNavData,
         secondaryNavData,
         url,
-        artifact
+        artifactWithoutContent
       );
 
-      const html = getPageHTML(template, rendered, { themeScript, dataScript });
+      const html = getPageHTML(
+        template, 
+        rendered, 
+        { themeScript, dataScript },
+        content
+      );
       const filePath = getRenderOutputPath(url);
       await writeRenderOutputToPath(filePath, html);
 

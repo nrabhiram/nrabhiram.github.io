@@ -5,5 +5,5 @@
 </script>
 
 <main>
-  <article>{@html artifact?.content}</article>
+  <article id="content"></article>
 </main>

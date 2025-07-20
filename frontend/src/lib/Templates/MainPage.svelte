@@ -4,6 +4,5 @@
   export let artifact: Artifact | null = null;
 </script>
 
-<main>
-  {@html artifact?.content}
+<main id="content">
 </main>
