@@ -213,11 +213,21 @@ function createHydrationDataScript(primaryNavData, secondaryNavData, url, artifa
   `;
 }
 
+function createAnalyticsScript() {
+  return `
+    <script 
+      defer src="https://inspectorbee.netlify.app/script.js" 
+      data-website-id="ddac1d11-d2e1-4bbf-a460-23b03363351d"
+      data-domains="vaxitas.xyz"
+    ></script>
+  `;
+}
+
 function getPageHTML(template, rendered, scripts, content) {
-  const { themeScript, dataScript } = scripts;
+  const { themeScript, dataScript, analyticsScript } = scripts;
   const html = template
     .replace('<!--app-theme-->', themeScript)
-    .replace('<!--app-head-->', rendered.head + (dataScript || ''))
+    .replace('<!--app-head-->', rendered.head + (dataScript || '') + analyticsScript)
     .replace('<!--app-html-->', rendered.html || '')
     .replace(/(<[^>]+id="content"[^>]*>)/, `$1${content || ''}`);
   return html;
@@ -438,11 +448,12 @@ async function generateSite() {
         url,
         artifactWithoutContent
       );
+      const analyticsScript = createAnalyticsScript();
 
       const html = getPageHTML(
         template, 
         rendered, 
-        { themeScript, dataScript },
+        { themeScript, dataScript, analyticsScript },
         content
       );
       const filePath = getRenderOutputPath(url);
