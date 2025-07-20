@@ -56,7 +56,7 @@ function isBasePath(url: string) {
 
 function getPageTitle(artifact: Artifact | null) {
   const baseTitle = 'Vaxitas';
-  const title = `${baseTitle}${artifact && artifact.name ? ` | ${artifact.name}` : ''}`;
+  const title = `${baseTitle}${artifact && artifact.name && artifact.name !== baseTitle ? ` | ${artifact.name}` : ''}`;
   return title;
 }
 
