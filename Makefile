@@ -1,5 +1,6 @@
 .PHONY: clean # Remove the executable files that had been created 
 clean:
+	mkdir -p bin
 	find bin -type f -not -name 'golangci-lint' -delete
 
 .PHONY: build # Compile your application code into binary code that can be run as an executable
