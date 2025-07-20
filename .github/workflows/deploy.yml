@@ -59,6 +59,8 @@ jobs:
       run: |
         cd frontend
         npm run build
+      env:
+        VITE_BASE_URL: https://vaxitas.xyz
 
     - name: Upload site's build to Pages
       uses: actions/upload-pages-artifact@v3
