@@ -35,7 +35,7 @@
   <meta property="og:image:width" content={'1920'}>
   <meta property="og:image:height" content={'1280'}>
   <meta property="og:site_name" content="Vaxitas">
-  <meta property="og:url" content={`${VAXITAS_BASE_URL}${artifact?.path}`}>
+  <meta property="og:url" content={`${VAXITAS_BASE_URL}${artifact?.path === "/home" ? "" : artifact?.path}`}>
   <meta property="og:type" content="website">
   <meta property="og:published_time" content={artifact?.date}>
   <meta property="og:updated_time" content={artifact?.dateEdited ? artifact?.dateEdited : artifact?.date}>
