@@ -147,8 +147,8 @@ function getArtifactData(artifact) {
     path: artifact.path,
     content: artifact.content,
     categories: artifact.metadata.categories,
-    date: artifact.metadata.others && artifact.metadata.others['date-created'] ? artifact.metadata.others['date-created'] : artifact.metadata.date,
-    dateEdited: artifact.metadata.others ? artifact.metadata.others['data-edited'] : undefined,
+    date: artifact.metadata.others && (artifact.metadata.others)['date-created'] ? (artifact.metadata.others)['date-created'] : artifact.metadata.date,
+    dateEdited: artifact.metadata.others ? (artifact.metadata.others)['data-edited'] : undefined,
   };
   
   if (artifact.next) {
