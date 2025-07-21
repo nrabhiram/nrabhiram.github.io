@@ -29,9 +29,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="alternate" type="application/atom+xml" title="Posts & Logs" href={`${VAXITAS_BASE_URL}/feed.atom`}>
   <meta property="og:title" content={title}>
-  {#if artifact?.summary}
-    <meta property="og:description" content={artifact.summary}>
-  {/if}
+  <meta property="og:description" content={artifact?.summary}>
   <meta property="og:locale" content="en_US">
   <meta property="og:image" content={`${VAXITAS_BASE_URL}/card.png`}>
   <meta property="og:image:secure_url" content={`${VAXITAS_BASE_URL}/card.png`}>
@@ -40,20 +38,13 @@
   <meta property="og:image:height" content={'1280'}>
   <meta property="og:site_name" content="Vaxitas">
   <meta property="og:url" content={`${VAXITAS_BASE_URL}${artifact?.path}`}>
-  <!-- condition for article or website -->
   <meta property="og:type" content="website">
-  {#if artifact?.date}
-    <meta property="og:published_time" content={artifact.date} />
-  {/if}
-  {#if artifact?.dateEdited}
-    <meta property="og:updated_time" content={artifact.dateEdited}>
-  {/if}
+  <meta property="og:published_time" content={artifact?.date}>
+  <meta property="og:updated_time" content={artifact?.dateEdited ? artifact?.dateEdited : artifact?.date}>
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:creator" content="@nrabhiram">
   <meta name="twitter:title" content={title}>
-  {#if artifact?.summary}
-    <meta name="twitter:description" content={artifact.summary}>
-  {/if}
+  <meta name="twitter:description" content={artifact?.summary}>
   <meta name="twitter:image" content={`${VAXITAS_BASE_URL}/card.png`}>
   <meta name="twitter:image:secure_url" content={`${VAXITAS_BASE_URL}/card.png`}>
 </svelte:head>
