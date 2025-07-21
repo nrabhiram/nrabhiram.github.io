@@ -1,8 +1,8 @@
 ---
 title: About Me
 summary: Who am I? What names do I go by? What kind of work do I do? What are my likes and hobbies? What's the best way to contact me? These are all interesting questions, but what are you doing on this page?
-date: 2025-05-28 09:20
-date: 2025-06-30 08:53
+date: 2025-05-28T09:20:00+05:30
+date-edited: 2025-06-30T08:53:00+05:30
 index: 1
 ---
 

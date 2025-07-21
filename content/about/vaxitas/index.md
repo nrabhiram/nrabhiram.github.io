@@ -2,7 +2,7 @@
 title: What is Vaxitas?
 summary: What is the purpose of this site? What is a metaphor for the site? How does it influence the way I interact with it? Why did I create it in the first place? These are some questions that I aim to answer here.
 date: 2025-05-14
-date: 2025-06-30 11:43
+date-edited: 2025-06-30T11:43:00+05:30
 index: 2
 ---
 

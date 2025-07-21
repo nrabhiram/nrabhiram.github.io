@@ -1,8 +1,8 @@
 ---
 title: Now
 summary: This is where I write monthly life updates, share my wins, struggles, obsessions, and more.
-date: 2025-06-01 21:52
-date: 2025-06-15 16:35
+date: 2025-06-01T21:52:00+05:30
+date-edited: 2025-06-15T16:35:00+05:30
 index: 4
 ---
 
