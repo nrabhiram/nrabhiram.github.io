@@ -141,14 +141,20 @@ function getArtifactToBeRendered(artifacts, schema, url) {
 
 // process artifact and return data necessary for rendering purposes
 function getArtifactData(artifact) {
+  let dateCreated;
+  let dateEdited;
+  if (artifact.metadata.others) {
+    dateCreated = artifact.metadata.others?.['date-created'];
+    dateEdited = artifact.metadata.others?.['date-edited'];
+  }
   const artifactData = {
     summary: artifact.metadata.summary,
     name: artifact.name,
     path: artifact.path,
     content: artifact.content,
     categories: artifact.metadata.categories,
-    date: artifact.metadata.others && (artifact.metadata.others)['date-created'] ? (artifact.metadata.others)['date-created'] : artifact.metadata.date,
-    dateEdited: artifact.metadata.others ? (artifact.metadata.others)['data-edited'] : undefined,
+    date: dateCreated ? dateCreated : artifact.metadata.date,
+    dateEdited: dateEdited ? dateEdited : undefined,
   };
   
   if (artifact.next) {
