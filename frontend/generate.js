@@ -5,6 +5,8 @@ import { fileURLToPath } from 'node:url';
 // define directory path of script (root of frontend)
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+const BASE_URL = process.env.VITE_BASE_URL || 'http://localhost:8081';
+
 // calculates the absolute path of a file, 
 // if we provide the relative path, 
 // i.e wrt the frontend directory
@@ -186,6 +188,49 @@ async function copyArtifactImages(artifact, rootPath) {
   }
 }
 
+function getPageTitle(artifact) {
+  const baseTitle = 'Vaxitas';
+  const title = `${baseTitle}${artifact && artifact.name && artifact.name !== baseTitle ? ` | ${artifact.name}` : ''}`;
+  return title;
+}
+
+function getPageMetaTags(artifact) {
+  const title = getPageTitle(artifact);
+  const url = `${BASE_URL}${artifact?.path === "/home" ? "" : artifact?.path}`;
+  return `
+    <title>${title}</title>
+    <meta name="title" content="${title}">
+    <meta name="description" content="${artifact.summary}">
+    <meta name="author" content="Abhiram Reddy">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="alternate" type="application/atom+xml" title="Posts & Logs" href="${BASE_URL}/feed.atom">
+    <meta property="og:title" content="${title}">
+    <meta property="og:description" content="${artifact.summary}">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="${BASE_URL}/card.png">
+    <meta property="og:image:secure_url" content="${BASE_URL}/card.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1920">
+    <meta property="og:image:height" content="1280">
+    <meta property="og:site_name" content="Vaxitas">
+    <meta property="og:url" content="${url}">
+    <meta property="og:type" content="website">
+    <meta property="og:published_time" content="${artifact.date}">
+    <meta property="og:updated_time" content="${artifact.dateEdited ? artifact.dateEdited : artifact.date}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@nrabhiram">
+    <meta name="twitter:title" content="${title}">
+    <meta name="twitter:description" content="${artifact?.summary}">
+    <meta name="twitter:image" content="${BASE_URL}/card.png">
+    <meta name="twitter:image:secure_url" content="${BASE_URL}/card.png"}>
+  `;
+}
+
 function createThemeInitScript() {
   return `
     <script>
@@ -224,10 +269,10 @@ function createAnalyticsScript() {
 }
 
 function getPageHTML(template, rendered, scripts, content) {
-  const { themeScript, dataScript, analyticsScript } = scripts;
+  const { themeScript, dataScript, analyticsScript, metaTags } = scripts;
   const html = template
     .replace('<!--app-theme-->', themeScript)
-    .replace('<!--app-head-->', rendered.head + (dataScript || '') + analyticsScript)
+    .replace('<!--app-head-->', metaTags + (dataScript || '') + analyticsScript)
     .replace('<!--app-html-->', rendered.html || '')
     .replace(/(<[^>]+id="content"[^>]*>)/, `$1${content || ''}`);
   return html;
@@ -449,11 +494,12 @@ async function generateSite() {
         artifactWithoutContent
       );
       const analyticsScript = createAnalyticsScript();
+      const metaTags = getPageMetaTags(artifact);
 
       const html = getPageHTML(
         template, 
         rendered, 
-        { themeScript, dataScript, analyticsScript },
+        { themeScript, dataScript, analyticsScript, metaTags },
         content
       );
       const filePath = getRenderOutputPath(url);

@@ -1,6 +1,5 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
-import type { Artifact } from "./types";
 
 const VAXITAS_LS_THEME_KEY = 'theme';
 const VAXITAS_LS_DRAWER_KEY = 'drawer_open';
@@ -54,12 +53,6 @@ function isBasePath(url: string) {
   return pathSegments.length === 1;
 }
 
-function getPageTitle(artifact: Artifact | null) {
-  const baseTitle = 'Vaxitas';
-  const title = `${baseTitle}${artifact && artifact.name && artifact.name !== baseTitle ? ` | ${artifact.name}` : ''}`;
-  return title;
-}
-
 export { 
   VAXITAS_LS_THEME_KEY,
   VAXITAS_LS_DRAWER_KEY,
@@ -71,5 +64,4 @@ export {
   matchesPath,
   isPrimaryNavLinkActive,
   isBasePath,
-  getPageTitle,
 }
