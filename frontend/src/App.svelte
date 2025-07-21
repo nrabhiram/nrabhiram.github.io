@@ -17,9 +17,7 @@
 <svelte:head>
   <title>{title}</title>
   <meta name="title" content={title}>
-  {#if artifact?.summary}
-    <meta name="description" content={artifact.summary}>
-  {/if}
+  <meta name="description" content={artifact.summary}>
   <meta name="author" content="Abhiram Reddy">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
