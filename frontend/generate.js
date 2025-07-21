@@ -156,6 +156,8 @@ function getArtifactData(artifact) {
     date: dateCreated ? dateCreated : artifact.metadata.date,
     dateEdited: dateEdited ? dateEdited : undefined,
   };
+
+  console.log(artifactData.date, artifactData.dateEdited);
   
   if (artifact.next) {
     const nextArtifact = artifact.next;
