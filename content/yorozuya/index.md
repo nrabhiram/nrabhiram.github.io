@@ -2,7 +2,7 @@
 title: Yorozuya
 summary: I set up shop here for all sorts of odd jobs (T&C apply) and attempt to make a case for why you should collaborate with me for your next project.
 date: 2025-06-20T15:17:00+05:30
-date-edite: 2025-06-29T18:15:00+05:30
+date-edited: 2025-06-29T18:15:00+05:30
 index: 2
 ---
 
