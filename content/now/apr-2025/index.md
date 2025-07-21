@@ -30,7 +30,7 @@ date-edited: 2025-06-30T14:36:00+05:30
 - I personally thought that the place was alright. It was secluded and quiet, but the scenery was nice. We also had TV and good network connectivity. I appreciated the change in pace and environment. It seemed like a great way to reset.
 - But, no one nipped the concerns off and my family had begun to spiral. Begrudgingly, I suggested that they request a refund so that we could head back. It seemed pointless to stay there for half a week when all we were going to do was complain the whole day.
 - After some back and forth, we came to an agreement with the owners regarding the refund. We left at noon the following day.
-- On the way back, we stopped at an elephant reserve (if memory serves me right), a lake, and a restaurant for lunch.
+- On the way back, we stopped at an elephant reserve (if I remember correctly), a lake, and a restaurant for lunch.
 - I spent the rest of the week mostly playing badminton.
 - I met another friend of mine a couple of times. They were in the city to attend their cousin's wedding. We watched Sinners together and grabbed lunch at Fatty Bao.
 - I didn't leave with my family because car journeys make me nauseous. I left the next day. 
