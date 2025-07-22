@@ -44,4 +44,4 @@ The reason for his name is also quite funny. Preet and Varun were discussing wha
 
 ![Cute pic of Biryani](./biryani-posing.jpeg)
 
-I would only see Biryani when I visited BLR, but I'm grateful for the time I spent with him. I'm deeply saddened by his passing. RIP. We'll miss him. I hope that Varun and Preet get through this tough time.
+I would only see Biryani when I visited BLR, but I'm grateful for the time I spent with him. I'm deeply saddened by his passing. RIP. We'll miss him.
