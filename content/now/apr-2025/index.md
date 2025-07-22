@@ -4,6 +4,7 @@ summary: My cousin sister visited us from BLR after her board exams, watched a c
 date: 2025-05-01T23:03:00+05:30
 date-created: 2025-06-05T23:03:00+05:30
 date-edited: 2025-06-30T14:36:00+05:30
+cast-hash: 0xb2b2c084
 ---
 
 - I went to a Crocs outlet to buy slippers for home wear. The straps on my older pair broke.
