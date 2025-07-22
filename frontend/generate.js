@@ -143,9 +143,11 @@ function getArtifactToBeRendered(artifacts, schema, url) {
 function getArtifactData(artifact) {
   let dateCreated;
   let dateEdited;
+  let castHash;
   if (artifact.metadata.others) {
     dateCreated = artifact.metadata.others?.['date-created'];
     dateEdited = artifact.metadata.others?.['date-edited'];
+    castHash = artifact.metadata.others?.['cast-hash'];
   }
   const artifactData = {
     summary: artifact.metadata.summary,
@@ -155,6 +157,7 @@ function getArtifactData(artifact) {
     categories: artifact.metadata.categories,
     date: dateCreated ? dateCreated : artifact.metadata.date,
     dateEdited: dateEdited ? dateEdited : undefined,
+    castHash: castHash ? castHash : undefined,
   };
 
   console.log(artifactData.date, artifactData.dateEdited);

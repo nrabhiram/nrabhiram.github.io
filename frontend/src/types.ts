@@ -17,6 +17,7 @@ interface Artifact {
   files?: any[];
   prev?: Link;
   next?: Link;
+  castHash?: string;
 }
 
 interface AdjacentLink {
@@ -24,8 +25,26 @@ interface AdjacentLink {
   name: string;
 }
 
+type Reply = {
+  hash: string;
+  text: string;
+  username: string;
+  displayName: string;
+  pfp: string;
+  formattedDate: string;
+  replies: Reply[];
+}
+
+type Reactions = {
+  likes?: number;
+  recasts?: number;
+  comments?: number;
+}
+
 export {
   type Link,
   type Artifact,
   type AdjacentLink,
+  type Reply,
+  type Reactions,
 }
