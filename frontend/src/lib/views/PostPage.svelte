@@ -73,7 +73,7 @@
 
   onMount(() => {
     if (!artifact || !artifact.castHash) return;
-    fetch(`https://client.farcaster.xyz/v2/user-thread-casts?castHashPrefix=${artifact.castHash}&username=vaxitas.eth`)
+    fetch(`https://vaxitas-fc-api-proxy.netlify.app/vaxitas.eth/${artifact.castHash}`)
       .then(res => res.json())
       .then(comments => {
         const commentsData = extractComments(comments);
