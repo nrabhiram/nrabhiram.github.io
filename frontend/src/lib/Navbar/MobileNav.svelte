@@ -59,7 +59,7 @@
       )}
     >
       <svelte:fragment>
-        {#each primaryNavData as primaryNavItem}
+        {#each primaryNavData as primaryNavItem (primaryNavItem.path)}
           {#if secondaryNavData && secondaryNavData.path === primaryNavItem.path}
             <SecondaryNavItem 
               secondaryNavItem={secondaryNavData}

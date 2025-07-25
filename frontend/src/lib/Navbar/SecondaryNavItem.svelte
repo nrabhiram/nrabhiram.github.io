@@ -119,7 +119,7 @@
           accordionOpen ? (interacted ? "overflow-y-hidden" : "") : "overflow-y-hidden"
         )}
       >
-        {#each secondaryNavItem.items as subNavItem}
+        {#each secondaryNavItem.items as subNavItem (subNavItem.path)}
           <svelte:self 
             secondaryNavItem={subNavItem}
             url={url}

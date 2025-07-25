@@ -73,7 +73,7 @@
       >
         <svelte:fragment>
           <div class="w-full h-full p-2 flex flex-col gap-2">
-            {#each primaryNavData as primaryNavItem}
+            {#each primaryNavData as primaryNavItem (primaryNavItem.path)}
               <PrimaryNavItem
                 primaryNavItem={primaryNavItem}
                 selected={isPrimaryNavLinkActive(url, primaryNavItem.path)}
@@ -131,7 +131,7 @@
       </button>
     {/if}
     {#if isDrawerOpen && secondaryNavOpen && secondaryNavData && secondaryNavData.items}
-      {#each secondaryNavData.items as secondaryNavItem}
+      {#each secondaryNavData.items as secondaryNavItem (secondaryNavItem.path)}
         <SecondaryNavItem 
           secondaryNavItem={secondaryNavItem}
           url={url}
