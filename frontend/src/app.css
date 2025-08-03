@@ -179,12 +179,27 @@
   @apply flex flex-wrap list-none ml-0 gap-2 mt-2;
 }
 
+.posts {
+  @apply mt-10 flex flex-col gap-6;
+}
+
+.post {
+  @apply no-underline font-normal;
+}
+
+.post h4,
+.post p {
+  @apply mt-0 mb-2;
+}
+
 .half ul.links li,
-.half .img-card ul li {
+.half .img-card ul li,
+.categories .category {
   @apply shrink-0;
 }
 
-.half ul.links li a {
+.half ul.links li a, 
+.categories .category {
   @apply border-2 border-vaxitas-tertiary rounded-md p-1 no-underline text-sm text-vaxitas-tertiary flex gap-1 items-center;
 }
 

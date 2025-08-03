@@ -245,7 +245,7 @@ function processInlineReferences(content: string, footnotes: { [key: string]: st
   return content.replace(/\[(\^[^\]]+)\]/g, (match, key) => {
     if (footnotes[key]) {
       const id = key.replace('^', ''); // remove the ^ to get just the footnote identifier
-      return `<sup><a href="#footnote-${id}" class="text-vaxitas-secondary hover:underline">${id}</a></sup>`;
+      return `<sup><a href="#footnote-${id}" class="text-vaxitas-secondary hover:underline" id="ref-${id}">${id}</a></sup>`;
     }
     return match;
   });
@@ -389,6 +389,8 @@ export async function render(
       content: artifact.content
     };
   }
+
+  console.log(url, secondaryNavData === undefined);
 
   return [
     _render(App, {
