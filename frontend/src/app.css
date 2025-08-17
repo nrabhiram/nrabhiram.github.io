@@ -17,6 +17,10 @@
     @apply text-vaxitas-secondary no-underline;
   }
 
+  hr {
+    @apply border-vaxitas-tertiary;
+  }
+
   h2 > a:hover::after,
   h3 > a:hover::after,
   h4 > a:hover::after,
@@ -180,11 +184,13 @@
 }
 
 .half ul.links li,
-.half .img-card ul li {
+.half .img-card ul li,
+.categories .category {
   @apply shrink-0;
 }
 
-.half ul.links li a {
+.half ul.links li a,
+.categories .category {
   @apply border-2 border-vaxitas-tertiary rounded-md p-1 no-underline text-sm text-vaxitas-tertiary flex gap-1 items-center;
 }
 
@@ -222,6 +228,31 @@
 
 .half .img-card:last-child {
   @apply mb-0;
+}
+
+.posts {
+  @apply mt-10 flex flex-col gap-6;
+}
+
+.post {
+  @apply no-underline font-normal;
+}
+
+.post h4,
+.post p {
+  @apply mt-0 mb-2;
+}
+
+.post .heading {
+  @apply flex flex-col lg:flex-row lg:items-center gap-2 lg:gap-5 mb-1 lg:mb-2;
+}
+
+.post .heading h4 {
+  @apply leading-none m-0;
+}
+
+.post .heading .separator {
+  @apply flex-grow bg-vaxitas-secondary h-[2px] opacity-70 hidden lg:block;
 }
 
 :root {

@@ -3,6 +3,7 @@ interface Link {
   path: string;
   summary?: string;
   categories?: string[];
+  date?: string;
   items?: Link[];
 }
 

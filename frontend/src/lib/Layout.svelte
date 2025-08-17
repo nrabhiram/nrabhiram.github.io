@@ -148,6 +148,9 @@
           {#if nextLink}
             <p>Next entry: <a href={nextLink?.path}>{nextLink?.name}</a></p>
           {/if}
+          {#if url.startsWith("/blog") && url !== "/blog"}
+            <a href="/blog">← Blog</a>
+          {/if}
         </div>
       </header>
       <slot />

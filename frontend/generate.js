@@ -88,9 +88,10 @@ function getSecondaryNavData(artifact) {
   const secondaryNavData = {};
   secondaryNavData["path"] = artifact.path;
   secondaryNavData["name"] = artifact.name;
-  secondaryNavData["summary"] = artifact.summary;
+  secondaryNavData["summary"] = artifact.summary || artifact.metadata.summary;
+  secondaryNavData["date"] = artifact.date || artifact.metadata.date;
   secondaryNavData["items"] = [];
-  secondaryNavData["categories"] = artifact.categories;
+  secondaryNavData["categories"] = artifact.categories || artifact.metadata.categories;
   for (let i = 0; i < nestedArtifacts.length; i++) {
     const nestedArtifact = nestedArtifacts[i];
     const nestedNavItem = getSecondaryNavData(nestedArtifact);
@@ -131,6 +132,12 @@ function getPageSecondaryNavData(url, schema) {
   const baseArtifact = schema[baseRouteKey];
   if (isNestedRoute || baseArtifact.artifacts.length > 0) secondaryNavData = getSecondaryNavData(baseArtifact);
   return secondaryNavData;
+}
+
+function processBlogPageResults(url, results) {
+  if (url !== "/blog") return [];
+  const blogPosts = results.items || [];
+  return blogPosts;
 }
 
 function getArtifactToBeRendered(artifacts, schema, url) {
@@ -279,14 +286,46 @@ function createAnalyticsScript() {
   `;
 }
 
-function getPageHTML(template, rendered, scripts, content) {
+function getPageHTML(template, rendered, scripts, content, blogPostResults = []) {
   const { themeScript, dataScript, analyticsScript, metaTags } = scripts;
+  
+  let resultsSection = '<div class="posts">';
+  
+  for (let res of blogPostResults) {
+    let categoriesSection = "";
+    
+    for (let category of res.categories) {
+      categoriesSection += `<button class="category">${category}</button>`;
+    }
+
+    let date = new Date(res.date);
+    date = date.toLocaleDateString('de-DE');
+
+    resultsSection += `
+      <a class="post" href=${res.path}>
+        <div class="heading">
+          <h4>${res.name}</h4>
+          <div class="separator"></div>
+          <span>${date}</span>
+        </div>
+        <p>${res.summary}</p>
+        <div class="flex items-center gap-2 flex-wrap categories">
+          ${categoriesSection}
+        </div>
+      </a>
+    `;
+  }
+
+  resultsSection += `</div>`;
+  if (blogPostResults.length > 0) content += resultsSection;
+  
   const html = template
     .replace('<!--app-theme-->', themeScript)
     .replace('<!--app-head-->', metaTags + (dataScript || '') + analyticsScript)
     .replace('<!--app-html-->', rendered.html || '')
     .replace(/(<[^>]+id="content"[^>]*>)/, `$1${content || ''}`);
-  return html;
+  
+    return html;
 }
 
 function getRenderOutputPath(url) {
@@ -478,11 +517,12 @@ async function generateSite() {
       console.log(`Pre-rendering: ${url}`); 
 
       const secondaryNavData = getPageSecondaryNavData(url, schema);
+      const blogPostResults = processBlogPageResults(url, secondaryNavData);
 
       const [rendered, compiledArtifact] = await render(
         url, 
         primaryNavData,
-        secondaryNavData, 
+        url.startsWith("/blog") ? undefined : secondaryNavData,
         getArtifactToBeRendered(artifacts, schema, url)
       );
 
@@ -500,7 +540,7 @@ async function generateSite() {
       const themeScript = createThemeInitScript();
       const dataScript = createHydrationDataScript(
         primaryNavData,
-        secondaryNavData,
+        url.startsWith("/blog") ? undefined : secondaryNavData, 
         url,
         artifactWithoutContent
       );
@@ -511,7 +551,8 @@ async function generateSite() {
         template, 
         rendered, 
         { themeScript, dataScript, analyticsScript, metaTags },
-        content
+        content,
+        blogPostResults
       );
       const filePath = getRenderOutputPath(url);
       await writeRenderOutputToPath(filePath, html);

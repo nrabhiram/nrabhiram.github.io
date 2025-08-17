@@ -25,6 +25,7 @@
   }
   
   function openSecondaryDrawer() {
+    if (!secondaryNavData) return;
     dispatch('openSecondaryDrawer');
   }
   
