@@ -4,6 +4,7 @@ summary: I struggled with solitude and yearned for my friends' company. So, I ob
 categories: personal, indieweb
 date: 2025-08-17T16:50:00+05:30
 old-date: 2025-08-03T21:52:00+05:30
+cast-hash: 0xc7d3de21
 ---
 
 My current work commitment endows me with the luxury to work remote. So, I made the decision to move back home and live with my family in HYD about a year and a half ago. I was excited about the move, because it was the first time in over a decade that my family would be living together under the same roof. When I turned 13, we relocated from Singapore to look after my paternal grandparents. Their health was deteriorating and they were in need of caretakers. There aren't a lot of opportunities in my father's line of work here, so he stayed back and took on roles that provided him the flexibility to visit us frequently. Last year, he finally retired and moved back permanently.

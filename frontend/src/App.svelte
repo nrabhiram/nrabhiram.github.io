@@ -1,7 +1,7 @@
 <!-- App.svelte -->
 <script lang="ts">
   import Layout from "./lib/Layout.svelte";
-    import BlogHomePage from "./lib/views/BlogHomePage.svelte";
+  import BlogHomePage from "./lib/views/BlogHomePage.svelte";
   import MainPage from "./lib/views/MainPage.svelte";
   import PostPage from "./lib/views/PostPage.svelte";
   import type { Artifact, Link } from "./types";
