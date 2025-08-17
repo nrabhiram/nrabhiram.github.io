@@ -1,8 +1,7 @@
 ---
 title: Blog
-summary: Learn more about me, the purpose of this site, and how I intend to use it.
-date: 2025-05-17
-date-edited: 2025-06-30T11:02:00+05:30
+summary: This is where I write essays about my personal reflections, reviews of media that I've consumed, and my technical explorations around programming and building things for the web.
+date: 2025-08-17T17:12:00+05:30
 index: 4
 ---
 
