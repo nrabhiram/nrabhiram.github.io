@@ -42,10 +42,17 @@ type Reactions = {
   comments?: number;
 }
 
+type HeadingNode = {
+  level: number;
+  text: string;
+  id: string;
+}
+
 export {
   type Link,
   type Artifact,
   type AdjacentLink,
   type Reply,
   type Reactions,
+  type HeadingNode,
 }

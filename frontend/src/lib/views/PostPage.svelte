@@ -1,18 +1,27 @@
 <script lang="ts">
-  import { onMount } from "svelte";
+  import { onDestroy, onMount } from "svelte";
   import { ThemeStore } from "../../stores/theme";
-  import type { Artifact, Reactions, Reply } from "../../types";
+  import type { Artifact, HeadingNode, Reactions, Reply } from "../../types";
   import Comment from "../Comment.svelte";
   import Recast from "../icons/Recast.svelte";
   import Like from "../icons/Like.svelte";
   import Comments from "../icons/Comments.svelte";
   import SingleComment from "../icons/SingleComment.svelte";
+  import Accordion from "../ui/Accordion/Accordion.svelte";
+  import ChevronRight from "../icons/ChevronRight.svelte";
+  import { cn } from "../../utils";
+  import AccordionContent from "../ui/Accordion/AccordionContent.svelte";
 
   export let artifact: Artifact | null = null;
+  export let tableOfContents: HeadingNode[] = [];
   let replies: Reply[] = [];
   let reactions: Reactions = {};
   let isDarkMode = false;
   let loading = true;
+  let tocOpen = true;
+  let enableTocAnim = false;
+  let headingId = '';
+  let observer: IntersectionObserver | null = null;
 
   function extractRepliesFromCast(cast: any): Reply[] {
     const allReplies: any[] = [];
@@ -71,7 +80,50 @@
     isDarkMode = value === 'dark';
   });
 
+  function setupHeadingObserver() {
+    if (typeof window === 'undefined') return;
+    if (!tableOfContents.length) return;
+
+    observer = new IntersectionObserver((entries) => {
+      const visibleEntries = entries.filter(entry => entry.isIntersecting);
+      if (!visibleEntries.length) return;
+      visibleEntries.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+      
+      const topEntry = visibleEntries[0];
+      const id = topEntry.target.id;
+
+      if (headingId === id && tableOfContents.length === 1) {
+        const singleHeading = tableOfContents[0];
+        const headingEle = document.getElementById(singleHeading.id);
+        const rect = headingEle!.getBoundingClientRect();
+        const stillVisible = rect.top >= 0 && rect.top <= window.innerHeight;;
+        
+        if (!stillVisible) {
+          headingId = "";
+        }
+
+        return;
+      }
+
+      if (id && tableOfContents.some(heading => heading.id == id)) {
+        headingId = id;
+      } else {
+        headingId = "";
+      }
+    }, {
+      threshold: 0
+    });
+
+    tableOfContents.forEach(heading => {
+      const element = document.getElementById(heading.id);
+      if (element && observer) {
+        observer.observe(element);
+      }
+    });
+  }
+
   onMount(() => {
+    setupHeadingObserver();
     if (!artifact || !artifact.castHash) return;
     fetch(`https://vaxitas-fc-api-proxy.netlify.app/vaxitas.eth/${artifact.castHash}`)
       .then(res => res.json())
@@ -84,10 +136,87 @@
         loading = false;
       });
   });
+
+  onDestroy(() => {
+    if (!observer) return
+    observer.disconnect();
+  });
 </script>
 
 <main>
-  <article id="content"></article>
+  <div class="relative w-full flex lg:flex-row flex-col-reverse lg:gap-4">
+    <article 
+      class={cn(
+        "w-full",
+        tableOfContents.length > 0 && "lg:w-3/5"
+      )}
+      id="content"
+    ></article>
+    {#if tableOfContents.length > 0}
+      <section class="border-2 border-vaxitas-secondary lg:w-2/5 w-full lg:sticky lg:right-0 lg:top-2 self-start rounded-md">
+        <Accordion
+          open={tocOpen}
+          animDuration={200}
+          on:toggleAccordion={() => {
+            if (!enableTocAnim) enableTocAnim = true;
+            tocOpen = !tocOpen;
+          }}
+          disableAnim={!enableTocAnim}
+        >
+          <svelte:fragment
+            slot="trigger"
+            let:open
+            let:toggle
+          >
+            <button 
+              class="w-full flex items-center justify-between p-2 bg-vaxitas-secondary"
+              on:click={toggle}
+            >
+              <span class="text-vaxitas-primary font-semibold">Table of Contents</span>
+              <ChevronRight
+                className={cn(
+                  "w-4 h-4 stroke-vaxitas-primary stroke-2 ease-in-out duration-200",
+                  open && "rotate-90"
+                )}
+              />
+            </button>
+          </svelte:fragment>
+          <svelte:fragment
+            slot="content"
+            let:open
+            let:animDuration
+            let:disableAnim
+          >
+            <AccordionContent
+              open={open} 
+              animDuration={animDuration} 
+              disableAnim={disableAnim}
+              className="overflow-hidden"
+            >
+              <nav class="p-2">
+                <ul class="flex flex-col gap-1 list-none ml-0">
+                  {#each tableOfContents as heading (heading.id)}
+                    <li>
+                      <a 
+                        href={`#${heading.id}`}
+                        class={cn(
+                          "no-underline text-vaxitas-secondary text-sm font-medium duration-100",
+                          headingId !== heading.id && "lg:opacity-75",
+                        )}
+                        style={`padding-left: ${(heading.level - 2) * 8}px`}
+                      >
+                        {heading.text}
+                      </a>
+                    </li>
+                  {/each}
+                </ul>
+              </nav>
+            </AccordionContent>
+          </svelte:fragment>
+        </Accordion>
+      </section>
+    {/if}
+  </div>
   {#if artifact && artifact.castHash}
     <div class="mt-6 mb-3 flex items-end gap-5 justify-between lg:justify-start border-b-2 border-vaxitas-secondary">
       <div class="flex items-center">

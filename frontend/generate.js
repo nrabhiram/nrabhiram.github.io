@@ -83,18 +83,20 @@ function getPrimaryRouteData(schema, key) {
   return routeData;
 }
 
-function getSecondaryNavData(artifact) {
+function getSecondaryNavData(artifact, isBlogPost = false) {
   const nestedArtifacts = artifact.artifacts || [];
   const secondaryNavData = {};
   secondaryNavData["path"] = artifact.path;
   secondaryNavData["name"] = artifact.name;
-  secondaryNavData["summary"] = artifact.summary || artifact.metadata.summary;
+  if (isBlogPost) {
+    secondaryNavData["summary"] = artifact.summary || artifact.metadata.summary;
+  }
   secondaryNavData["date"] = artifact.date || artifact.metadata.date;
   secondaryNavData["items"] = [];
   secondaryNavData["categories"] = artifact.categories || artifact.metadata.categories;
   for (let i = 0; i < nestedArtifacts.length; i++) {
     const nestedArtifact = nestedArtifacts[i];
-    const nestedNavItem = getSecondaryNavData(nestedArtifact);
+    const nestedNavItem = getSecondaryNavData(nestedArtifact, isBlogPost);
     secondaryNavData.items.push(nestedNavItem);
   }
   return secondaryNavData;
@@ -130,7 +132,7 @@ function getPageSecondaryNavData(url, schema) {
   const isNestedRoute = isRouteNested(url);
   const baseRouteKey = getBaseRouteSchemaKey(url);
   const baseArtifact = schema[baseRouteKey];
-  if (isNestedRoute || baseArtifact.artifacts.length > 0) secondaryNavData = getSecondaryNavData(baseArtifact);
+  if (isNestedRoute || baseArtifact.artifacts.length > 0) secondaryNavData = getSecondaryNavData(baseArtifact, url.startsWith("/blog"));
   return secondaryNavData;
 }
 
@@ -263,14 +265,15 @@ function createThemeInitScript() {
   `;
 }
 
-function createHydrationDataScript(primaryNavData, secondaryNavData, url, artifact) {
+function createHydrationDataScript(primaryNavData, secondaryNavData, url, artifact, tableOfContents) {
   return `
     <script type="application/json" id="svelteData">
       ${JSON.stringify({ 
         primaryNavData, 
         secondaryNavData, 
         url, 
-        artifact: artifact
+        artifact: artifact,
+        tableOfContents,
       })}
     </script>
   `;
@@ -519,7 +522,7 @@ async function generateSite() {
       const secondaryNavData = getPageSecondaryNavData(url, schema);
       const blogPostResults = processBlogPageResults(url, secondaryNavData);
 
-      const [rendered, compiledArtifact] = await render(
+      const [rendered, compiledArtifact, tableOfContents] = await render(
         url, 
         primaryNavData,
         url.startsWith("/blog") ? undefined : secondaryNavData,
@@ -527,7 +530,7 @@ async function generateSite() {
       );
 
       const artifact = getArtifactData(compiledArtifact);
-      const { content, ...artifactWithoutContent } = artifact;
+      const { content, summary, ...artifactWithoutContent } = artifact;
 
       const isNowPost = url.startsWith("/now") && url !== "/now";
       const isBlogPost = url.startsWith("/blog") && url !== "/blog";
@@ -542,7 +545,8 @@ async function generateSite() {
         primaryNavData,
         url.startsWith("/blog") ? undefined : secondaryNavData, 
         url,
-        artifactWithoutContent
+        artifactWithoutContent,
+        tableOfContents
       );
       const analyticsScript = createAnalyticsScript();
       const metaTags = getPageMetaTags(artifact);

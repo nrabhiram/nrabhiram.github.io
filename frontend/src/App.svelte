@@ -4,13 +4,14 @@
   import BlogHomePage from "./lib/views/BlogHomePage.svelte";
   import MainPage from "./lib/views/MainPage.svelte";
   import PostPage from "./lib/views/PostPage.svelte";
-  import type { Artifact, Link } from "./types";
+  import type { Artifact, HeadingNode, Link } from "./types";
   import { matchesPath } from "./utils";
 
   export let url = "";
   export let primaryNavData: Link[] = [];
   export let secondaryNavData: Link | null = null;
   export let artifact: Artifact | null = null;
+  export let tableOfContents: HeadingNode[] = [];
 </script>
 
 <Layout 
@@ -24,11 +25,17 @@
   {#if matchesPath(url, '/about/:slug')}
     <MainPage {artifact} />
   {:else if matchesPath(url, '/now/:slug')}
-    <PostPage {artifact} />
+    <PostPage 
+      {artifact} 
+      {tableOfContents} 
+    />
   {:else if matchesPath(url, '/blog')}
     <BlogHomePage {artifact} />
   {:else if matchesPath(url, '/blog/:slug')}
-    <PostPage {artifact} />
+    <PostPage 
+      {artifact} 
+      {tableOfContents}
+    />
   {:else if matchesPath(url, '/:slug')}
     <MainPage {artifact} />
   {:else if matchesPath(url, '/')}

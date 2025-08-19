@@ -2,7 +2,7 @@
 import { render as _render } from 'svelte/server'
 import { compile } from 'mdsvex'
 import App from './App.svelte'
-import type { Artifact, Link } from './types'
+import type { Artifact, HeadingNode, Link } from './types'
 
 function reviseImagePaths(artifact: Artifact, content: string) {
   if (!artifact.files) return content;
@@ -309,6 +309,23 @@ function processNowPageContent(url: string, content: string, secondaryNavData: L
   return content.replace(targetText, linkHtml);
 }
 
+function processTableOfContents(content: string) {
+  const headingRegex = /<h([1-6])[^>]*id="([^"]*)"[^>]*><a[^>]*>([^<]*)<\/a><\/h[1-6]>/g;
+  const headings: Array<{ level: number; text: string; id: string }> = [];
+
+  let match;
+  // maintains an internal pointer and keeps moving to the next match
+  while ((match = headingRegex.exec(content)) !== null) {
+    headings.push({
+      level: parseInt(match[1]),
+      text: match[3].trim(),
+      id: match[2]
+    });
+  }
+
+  return headings;
+}
+
 export async function render(
   url: string, 
   primaryNavData: Link[],
@@ -316,6 +333,7 @@ export async function render(
   artifact: Artifact,
 ) {
   let compiledArtifact = artifact;
+  let tableOfContents: HeadingNode[] = [];
 
   if (!artifact.content) return;
 
@@ -378,6 +396,11 @@ export async function render(
     // step 13: add footnotes section
     compiledContent = appendFootnotes(compiledContent, footnotes, artifact);
 
+    // step 14: add table of contents
+    if (url.startsWith("/blog")) {
+      tableOfContents = processTableOfContents(compiledContent);
+    }
+
     compiledArtifact = {
       ...artifact,
       content: compiledContent
@@ -397,8 +420,10 @@ export async function render(
         primaryNavData,
         secondaryNavData,
         artifact: compiledArtifact,
+        tableOfContents: tableOfContents,
       }
     }), 
-    compiledArtifact
+    compiledArtifact,
+    tableOfContents,
   ];
 }
