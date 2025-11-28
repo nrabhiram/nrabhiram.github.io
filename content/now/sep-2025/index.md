@@ -2,6 +2,7 @@
 title: September 2025
 summary: Life's got hands. I've had an eventful few months. I set up my personal website, attended Indieweb community meetups, had my first friend breakup, fell in and out of love with badminton, had my first intervention, Siri had a health scare, and much more.
 date: 2025-11-28T16:54:00+05:30
+cast-hash: 0x3ce30da4
 ---
 
 I always mean to write about the happenings in my life on a monthly basis, but my tendency to procrastinate gets the better of me. The past few months have been quite eventful, and I would like to reflect on them. For the sake of brevity, in this edition of the monthly log, I shall condense and present to you only my highlights from the past 3 months. Unfortunately, I'm still left with a lot to cover.
