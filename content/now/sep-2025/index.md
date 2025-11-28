@@ -1,6 +1,6 @@
 ---
 title: September 2025
-summary: Life's got hands. I've had an eventful few months. I set up my personal website, attended Indieweb community meetups, had my first friend breakup, fell in and out of love with badminton, had my first intervention, Siri had a health scare, and much more.
+summary: Life's got hands. I've had an eventful few months. I set up my personal website, got into my first road accident, attended Indieweb community meetups, had my first friend breakup, fell in and out of love with badminton, had my first intervention, Siri had a health scare, and much more.
 date: 2025-11-28T16:54:00+05:30
 cast-hash: 0x3ce30da4
 ---
