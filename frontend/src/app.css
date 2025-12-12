@@ -278,6 +278,75 @@
     @apply flex-grow bg-vaxitas-secondary h-[2px] opacity-70 hidden lg:block;
 }
 
+.snippets {
+    @apply flex flex-col gap-4 mt-4;
+}
+
+@media (min-width: 1024px) {
+    .snippets {
+        flex-flow: column wrap;
+        height: 1200px;
+        gap: unset;
+    }
+
+    .snippets .item:nth-of-type(3n + 1) {
+        order: 1;
+    }
+
+    .snippets .item:nth-of-type(3n + 2) {
+        order: 2;
+    }
+
+    .snippets .item:nth-of-type(3n) {
+        order: 3;
+    }
+
+    .snippets .break {
+        flex-basis: 100%;
+        width: 0;
+        order: 2;
+    }
+
+    .snippets .snippet {
+        width: calc(33.333% - 1rem);
+        margin: 0.5rem;
+    }
+}
+
+.snippet {
+    @apply no-underline font-normal border-2 border-vaxitas-secondary rounded-md inline-block;
+}
+
+.snippet .content {
+    @apply p-4 m-0;
+}
+
+.snippet .highlight {
+    @apply p-2;
+}
+
+.snippet .highlight {
+    @apply bg-vaxitas-secondary flex flex-col gap-2;
+}
+
+.snippet .heading {
+    @apply flex items-center justify-between gap-2;
+}
+
+.snippet .heading h4,
+.snippet .heading span {
+    @apply text-vaxitas-primary m-0;
+}
+
+.snippet .categories,
+.post .categories {
+    @apply flex items-center gap-2 flex-wrap;
+}
+
+.snippet .categories .category {
+    @apply border-vaxitas-primary text-vaxitas-primary;
+}
+
 :root {
     --color-primary: #fff3b0;
     --color-secondary: #336a83;

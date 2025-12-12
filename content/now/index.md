@@ -3,7 +3,7 @@ title: Now
 summary: This is where I write monthly life updates, share my wins, struggles, obsessions, and more.
 date: 2025-06-01T21:52:00+05:30
 date-edited: 2025-06-15T16:35:00+05:30
-index: 5
+index: 6
 ---
 
 Welcome to the "now" section of my site, where I talk about what I'm up to right now! I try to maintain monthly logs of my life that cover highlights, new experiences, learning updates, progress on projects, books I read, movies I watched, games I tried out, and my general headspace.

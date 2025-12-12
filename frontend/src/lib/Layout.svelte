@@ -164,6 +164,9 @@
           {#if url.startsWith("/blog") && url !== "/blog"}
             <a href="/blog">← Blog</a>
           {/if}
+          {#if url.startsWith("/snippets") && url !== "/snippets"}
+            <a href="/snippets">← Snippets</a>
+          {/if}
         </div>
       </header>
       <slot />
