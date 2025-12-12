@@ -3,6 +3,7 @@ title: Early Web Memories
 summary: tldr; I spent most of my time playing MMORPGs and Flash games, and watching badminton highlights and Kingdom Hearts playthroughs on YouTube.
 categories: personal, indieweb
 date: 2025-12-12T18:06:00+05:30
+cast-hash: 0xf4020d00
 ---
 
 Albeit rationed, I was fortunate that I had access to the internet ever since I was a wee kid. We had a PC at home, but due to the contents of my contract with my mom, which I shall not dive into here, I was only allowed to use it for short durations (although I must confess that I did test the leniency of our agreement on multiple occasions), often as a reward for completing my homework, or carrying out my responsibilities.
