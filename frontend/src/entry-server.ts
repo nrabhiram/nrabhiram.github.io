@@ -444,21 +444,22 @@ export async function render(
     // step 12: format the containers with side sections
     compiledContent = styleSideSectionFlexContainer(compiledContent);
 
-    // compiledContent = compiledContent.replace(
-    //   /{@html `([^`]*)`}/g,
-    //   (match, htmlContent) => {
-    //     // Unescape the HTML content
-    //     return htmlContent
-    //       .replace(/\\`/g, '`')
-    //       .replace(/\\\$/g, '$')
-    //       .replace(/\\\\/g, '\\');
-    //   }
-    // );
+    // step 13: extract HTML from Svelte {@html ...} directives
+    compiledContent = compiledContent.replace(
+      /{@html `([^`]*)`}/g,
+      (match, htmlContent) => {
+        // Unescape the HTML content
+        return htmlContent
+          .replace(/\\`/g, '`')
+          .replace(/\\\$/g, '$')
+          .replace(/\\\\/g, '\\');
+      }
+    );
 
-    // step 13: add footnotes section
+    // step 14: add footnotes section
     compiledContent = appendFootnotes(compiledContent, footnotes, artifact);
 
-    // step 14: add table of contents
+    // step 15: add table of contents
     if (url.startsWith("/blog") || url.startsWith("/snippets")) {
       tableOfContents = processTableOfContents(compiledContent);
     }

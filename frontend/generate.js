@@ -87,6 +87,9 @@ function getSecondaryNavData(artifact, includeSummary = false) {
   secondaryNavData["name"] = artifact.name;
   if (includeSummary) {
     secondaryNavData["summary"] = artifact.summary || artifact.metadata.summary;
+    if (artifact.metadata.others?.preview) {
+      secondaryNavData["preview"] = artifact.metadata.others.preview;
+    }
   }
   secondaryNavData["date"] = artifact.date || artifact.metadata.date;
   secondaryNavData["items"] = [];
@@ -199,6 +202,19 @@ function getArtifactData(artifact) {
   }
 
   return artifactData;
+}
+
+function getArtifactStyleSheet(artifact) {
+  let filePath = "";
+  if (!artifact.files) return filePath;
+  for (let i = 0; i < artifact.files.length; i++) {
+    const file = artifact.files[i];
+    if (file.name === "styles.css") {
+      filePath = file.location;
+      break;
+    }
+  }
+  return filePath;
 }
 
 // writes images for a page from the content directory to the static directory
@@ -357,6 +373,7 @@ function getPageHTML(
   content,
   blogPostResults = [],
   snippetsPostResults = [],
+  styleSheetPath = "",
 ) {
   const { themeScript, dataScript, analyticsScript, metaTags, masonryScript } =
     scripts;
@@ -399,9 +416,12 @@ function getPageHTML(
     let date = new Date(res.date);
     date = date.toLocaleDateString("de-DE");
 
+    const displayContent =
+      res.preview || `<p class="content">${res.summary}</p>`;
+
     snippetsResultsSection += `
       <a class="item snippet" href=${res.path}>
-        <p class="content">${res.summary}</p>
+        ${displayContent}
         <div class="highlight">
           <div class="heading">
             <h4>${res.name}</h4>
@@ -415,7 +435,7 @@ function getPageHTML(
     `;
   }
 
-  snippetsResultsSection += `<div class="item break"></div><div class="item break"></div></div>`;
+  snippetsResultsSection += `<span class="item break"></span><span class="item break"></span></div>`;
   resultsSection += "</div>";
 
   if (blogPostResults.length > 0) content += resultsSection;
@@ -428,6 +448,12 @@ function getPageHTML(
       metaTags + (dataScript || "") + analyticsScript + (masonryScript || ""),
     )
     .replace("<!--app-html-->", rendered.html || "")
+    .replace(
+      "<!--app-styles-->",
+      styleSheetPath
+        ? `<link rel="stylesheet" crossorigin href="/${styleSheetPath}">`
+        : "",
+    )
     .replace(/(<[^>]+id="content"[^>]*>)/, `$1${content || ""}`);
 
   return html;
@@ -659,6 +685,7 @@ async function generateSite() {
       );
 
       const artifact = getArtifactData(compiledArtifact);
+      const styleSheetPath = getArtifactStyleSheet(compiledArtifact);
       const { content, summary, ...artifactWithoutContent } = artifact;
 
       const isNowPost = url.startsWith("/now") && url !== "/now";
@@ -693,6 +720,7 @@ async function generateSite() {
         content,
         blogPostResults,
         snippetsPostResults,
+        styleSheetPath,
       );
       const filePath = getRenderOutputPath(url);
       await writeRenderOutputToPath(filePath, html);

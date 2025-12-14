@@ -287,6 +287,7 @@
         flex-flow: column wrap;
         height: 1200px;
         gap: unset;
+        align-content: flex-start;
     }
 
     .snippets .item:nth-of-type(3n + 1) {
@@ -304,7 +305,6 @@
     .snippets .break {
         flex-basis: 100%;
         width: 0;
-        order: 2;
     }
 
     .snippets .snippet {
@@ -319,6 +319,10 @@
 
 .snippet .content {
     @apply p-4 m-0;
+}
+
+.snippet img {
+    @apply m-0;
 }
 
 .snippet .highlight {

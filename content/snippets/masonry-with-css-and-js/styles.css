@@ -1,0 +1,56 @@
+.masonry-container {
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 2px solid var(--color-tertiary);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.masonry-container.with-cols {
+    columns: 3;
+}
+
+.masonry-container.with-cols .item {
+    break-inside: avoid;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.masonry-container.default {
+    display: flex;
+    flex-flow: column wrap;
+    height: 248px;
+    width: 100%;
+}
+
+.item {
+    color: var(--color-primary);
+    background: var(--color-secondary);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.masonry-container.default .item {
+    margin: 0.5rem;
+}
+
+.masonry-container.default .item.ordered:nth-of-type(3n + 1) {
+    order: 1;
+}
+
+.masonry-container.default .item.ordered:nth-of-type(3n + 2) {
+    order: 2;
+}
+
+.masonry-container.default .item.ordered:nth-of-type(3n) {
+    order: 3;
+}
+
+.masonry-container.default .item.barrier {
+    flex-basis: 100%;
+    width: 1px;
+    margin: unset;
+    background-color: var(--color-tertiary);
+}
