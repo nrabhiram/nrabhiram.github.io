@@ -4,6 +4,7 @@ summary: I was ideating on how I wanted my snippets page to look, and I used a t
 preview: <div class="content"><img src="/content/snippets/masonry-with-css-and-js/preview.png" alt="Masonry preview" loading="lazy"><p>I was ideating on how I wanted my snippets page to look, and I used a tumblr archive as a reference. I wanted variable heights, which turned out to be a task and a half because there wasn't a native CSS solution, and I learned that this layout had a well-established name: masonry.</p></div>
 categories: programming, web
 date: 2025-12-15T01:39:00+05:30
+cast-hash: 0xdb69ab36
 ---
 
 For months, I'd been putting off creating this part of my site. I wanted a space where I could write essays more freely without having to mull over the level of polish. I took inspiration from [Judah's riffs](https://joodaloop.com/riffs/), [Abhinav's notes](https://abhinavsarkar.net/notes/), and [Brandur's fragments](https://brandur.org/fragments). I wanted a name for this space that was original. After some deliberation, it finally came down to two contenders: *quickies* and *snippets*. I decided to go with the latter because it wouldn't be perceived as a sexual innuendo.
