@@ -19,6 +19,7 @@ interface Artifact {
   prev?: Link;
   next?: Link;
   castHash?: string;
+  metadata: any;
 }
 
 interface AdjacentLink {
@@ -34,19 +35,19 @@ type Reply = {
   pfp: string;
   formattedDate: string;
   replies: Reply[];
-}
+};
 
 type Reactions = {
   likes?: number;
   recasts?: number;
   comments?: number;
-}
+};
 
 type HeadingNode = {
   level: number;
   text: string;
   id: string;
-}
+};
 
 export {
   type Link,
@@ -55,4 +56,4 @@ export {
   type Reply,
   type Reactions,
   type HeadingNode,
-}
+};

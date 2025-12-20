@@ -310,6 +310,12 @@ function processFootnoteParagraphs(content: string) {
 
       // apply basic markdown formatting for text paragraphs
       const formatted = para
+        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, text, url) => {
+          const isExternal = url.startsWith("http") || url.startsWith("//");
+          return isExternal
+            ? `<a href="${url}" target="_blank">${text}</a>`
+            : `<a href="${url}">${text}</a>`;
+        })
         .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
         .replace(/\*(.*?)\*/g, "<em>$1</em>")
         .replace(/`(.*?)`/g, "<code>$1</code>");
@@ -450,10 +456,10 @@ export async function render(
       (match, htmlContent) => {
         // Unescape the HTML content
         return htmlContent
-          .replace(/\\`/g, '`')
-          .replace(/\\\$/g, '$')
-          .replace(/\\\\/g, '\\');
-      }
+          .replace(/\\`/g, "`")
+          .replace(/\\\$/g, "$")
+          .replace(/\\\\/g, "\\");
+      },
     );
 
     // step 14: add footnotes section
@@ -461,7 +467,14 @@ export async function render(
 
     // step 15: add table of contents
     if (url.startsWith("/blog") || url.startsWith("/snippets")) {
-      tableOfContents = processTableOfContents(compiledContent);
+      if (
+        artifact?.metadata?.others &&
+        artifact.metadata.others["table-of-contents"] === "omit"
+      ) {
+        tableOfContents = [];
+      } else {
+        tableOfContents = processTableOfContents(compiledContent);
+      }
     }
 
     compiledArtifact = {
