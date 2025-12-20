@@ -4,6 +4,7 @@ summary: Mr. Vaxitas decided to take on the role of a prophet. Mr. Vaxitas also 
 categories: personal, indieweb
 date: 2025-12-21T01:15:00+05:30
 table-of-contents: omit
+cast-hash: 0xde558aa1
 ---
 
 > While writing this list, the writer has made a bold assumption that he will live through the year of 2026, and that unforeseen mortal circumstances will not befall him. In case they do, he can be excused for not living up to his prophecies. Otherwise, albeit begrudgingly, the writer has agreed to be held liable for his inability to keep his promises. 
