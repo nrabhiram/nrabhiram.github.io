@@ -388,8 +388,9 @@ function getPageHTML(
       categoriesSection += `<button class="category">${category}</button>`;
     }
 
-    let date = new Date(res.date);
-    date = date.toLocaleDateString("de-DE");
+    let date = res.date.split('T')[0]; // "2025-12-21"
+    let [year, month, day] = date.split('-');
+    date = `${day}.${month}.${year}`;
 
     resultsSection += `
       <a class="post" href=${res.path}>
@@ -413,8 +414,9 @@ function getPageHTML(
       categoriesSection += `<button class="category">${category}</button>`;
     }
 
-    let date = new Date(res.date);
-    date = date.toLocaleDateString("de-DE");
+    let date = res.date.split('T')[0]; // "2025-12-21"
+    let [year, month, day] = date.split('-');
+    date = `${day}.${month}.${year}`;
 
     const displayContent =
       res.preview || `<p class="content">${res.summary}</p>`;
@@ -578,8 +580,12 @@ function extractFeedEntries(feedArtifacts) {
 
 function createAtomFeed(entries, feedInfo) {
   const { title, siteUrl, feedUrl, authorName, authorEmail } = feedInfo;
-  const updatedDate =
-    entries.length > 0 ? entries[0].updated : new Date().toISOString();
+  const updatedDate = entries.length > 0
+    ? entries.reduce((latest, entry) => {
+        const entryDate = new Date(entry.updated);
+        return entryDate > new Date(latest) ? entry.updated : latest;
+      }, entries[0].updated)
+    : new Date().toISOString();
 
   const atomXml = `<?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
