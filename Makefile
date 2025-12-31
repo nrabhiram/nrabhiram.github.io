@@ -13,7 +13,7 @@ dev:
 
 .PHONY: server # Run the application in development mode without having to build and run the executable file
 server:
-	go run cmd/server/main.go
+	CGO_ENABLED=0 go run cmd/server/main.go
 
 .PHONY: run # Build the application and run the compiled executable file 
 run: build
