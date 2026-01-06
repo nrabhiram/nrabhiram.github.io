@@ -326,10 +326,13 @@ function createMasonryHeightScript() {
   return `
     <script>
       function setMasonryHeight() {
-        if (window.innerWidth < 1024) return;
-
         const snippetsContainer = document.querySelector('.snippets');
         if (!snippetsContainer) return;
+
+        if (window.innerWidth < 1024) {
+          snippetsContainer.style.height = '';
+          return;
+        }
 
         const snippets = Array.from(snippetsContainer.querySelectorAll('.snippet'));
         if (snippets.length === 0) return;
@@ -339,9 +342,11 @@ function createMasonryHeightScript() {
         snippets.forEach((snippet, index) => {
           const computedStyle = window.getComputedStyle(snippet);
           const height = snippet.offsetHeight;
-          const marginTop = parseFloat(computedStyle.marginTop);
-          const marginBottom = parseFloat(computedStyle.marginBottom);
-          const totalHeight = height + marginTop + marginBottom;
+          const marginTop = parseFloat(computedStyle.marginTop) || 0;
+          const marginBottom = parseFloat(computedStyle.marginBottom) || 0;
+          const borderTop = parseFloat(computedStyle.borderTopWidth) || 0;
+          const borderBottom = parseFloat(computedStyle.borderBottomWidth) || 0;
+          const totalHeight = height + marginTop + marginBottom + borderTop + borderBottom;
 
           const childNumber = index + 1;
           let columnIndex;
@@ -357,11 +362,7 @@ function createMasonryHeightScript() {
       }
 
       window.addEventListener('load', setMasonryHeight);
-      window.addEventListener('resize', () => {
-        if (window.innerWidth >= 1024) {
-          setMasonryHeight();
-        }
-      });
+      window.addEventListener('resize', setMasonryHeight);
     </script>
   `;
 }
