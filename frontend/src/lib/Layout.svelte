@@ -11,7 +11,7 @@
   export let primaryNavData: Link[];
   export let secondaryNavData: Link | null = null;
   export let url: string = "";
-  export let heading = "";  
+  export let heading = "";
   export let prevLink: AdjacentLink | null = null;
   export let nextLink: AdjacentLink | null = null;
   let deviceType = '';
@@ -22,12 +22,12 @@
 
   function openNavbar() {
     if (!deviceType) return;
-    
+
     if (deviceType === 'desktop') {
       navOpen = true;
       return;
     }
-    
+
     if (deviceType === 'mobile') {
       mobileNavOpen = true;
       return;
@@ -36,12 +36,12 @@
 
   function closeNavbar() {
     if (!deviceType) return;
-    
+
     if (deviceType === 'desktop') {
       navOpen = false;
       return;
     }
-    
+
     if (deviceType === 'mobile') {
       mobileNavOpen = false;
       return;
@@ -69,7 +69,7 @@
   function initializeTheme() {
     const defaultTheme = typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     const savedTheme = getLocalStorage(VAXITAS_LS_THEME_KEY, defaultTheme) as 'light' | 'dark';
-    
+
     if (savedTheme === 'dark' || savedTheme === 'light') {
       ThemeStore.setMode(savedTheme);
     } else {
@@ -86,14 +86,14 @@
     if (!hash) return;
     const element = document.getElementById(hash.substring(1));
     if (!element) return;
-    element.scrollIntoView({ 
-      behavior: 'auto', 
-      block: 'start' 
+    element.scrollIntoView({
+      behavior: 'auto',
+      block: 'start'
     });
   }
 
   ThemeStore.getDevice.subscribe((value) => {
-    deviceType = value; 
+    deviceType = value;
   });
 
   ThemeStore.getMode.subscribe((value) => {
@@ -108,18 +108,18 @@
   });
 </script>
 
-<svelte:window 
-  on:resize={handleResize} 
+<svelte:window
+  on:resize={handleResize}
 ></svelte:window>
 
 <div class="flex min-h-screen w-screen bg-vaxitas-primary">
   <Navbar
     isDrawerOpen={navOpen}
-    isMobileDrawerOpen={mobileNavOpen} 
+    isMobileDrawerOpen={mobileNavOpen}
     deviceType={deviceType}
     on:closeDrawer={closeNavbar}
     on:toggleDrawer={toggleNavbar}
-    primaryNavData={primaryNavData} 
+    primaryNavData={primaryNavData}
     secondaryNavData={secondaryNavData}
     disableDrawerAnim={disableDrawerAnim}
     url={url}
@@ -136,15 +136,15 @@
             >
               <ThreeBars className="h-5 w-5 stroke-vaxitas-secondary stroke-2" />
             </button>
-            <a 
+            <a
               href="/"
               class="text-xl font-medium lg:hidden text-vaxitas-secondary no-underline"
             >
               V
             </a>
           {/if}
-          <ThemeToggle 
-            className="w-5 h-5 block cursor-pointer" 
+          <ThemeToggle
+            className="w-5 h-5 block cursor-pointer"
             isDarkMode={isDarkMode}
             on:toggle={() => {
               ThemeStore.toggleMode();
