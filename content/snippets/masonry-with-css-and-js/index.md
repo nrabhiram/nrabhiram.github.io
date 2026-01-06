@@ -1,7 +1,6 @@
 ---
 title: Masonries For Dummies
 summary: I was ideating on how I wanted my snippets page to look, and I used a tumblr archive as a reference. I wanted variable heights, which turned out to be a task and a half because there wasn't a native CSS solution, and I learned that this layout had a well-established name: masonry.
-preview: <div class="content"><img src="/content/snippets/masonry-with-css-and-js/preview.png" alt="Masonry preview" loading="lazy"><p>I was ideating on how I wanted my snippets page to look, and I used a tumblr archive as a reference. I wanted variable heights, which turned out to be a task and a half because there wasn't a native CSS solution, and I learned that this layout had a well-established name: masonry.</p></div>
 categories: programming, web
 date: 2025-12-15T01:39:00+05:30
 cast-hash: 0xdb69ab36
