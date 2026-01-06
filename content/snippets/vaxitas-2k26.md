@@ -3,6 +3,7 @@ title: Project Vaxitas: 2026
 summary: Listen to me yap about my motivation for maintaining this site, why my site supports more features than I've used, how I achieved a breakthrough once I created the snippets section, and my vision for the site in 2026.
 categories: personal, indieweb
 date: 2026-01-06T16:43:00+05:30
+cast-hash:0xf50e5a5c
 ---
 
 When I first shipped Vaxitas last July, I had published a [spec](about/vaxitas) that entailed the purpose the site served for me and my audience, which I envisioned to be primarily a bunch of friends and family whose company I enjoy, along with a few others who are invested in my life. My overarching goals and intentions with the site remain the same. I want it to be a space on the web where I spend a significant amount of my time reflecting, unabashedly expressing ideas, and morphing them into newer forms in the presence of previously unavailable information.
