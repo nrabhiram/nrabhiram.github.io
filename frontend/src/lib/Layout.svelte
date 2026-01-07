@@ -80,18 +80,6 @@
     }
   }
 
-  function scrollToHash() {
-    if (typeof window === 'undefined') return;
-    const hash = window.location.hash;
-    if (!hash) return;
-    const element = document.getElementById(hash.substring(1));
-    if (!element) return;
-    element.scrollIntoView({
-      behavior: 'auto',
-      block: 'start'
-    });
-  }
-
   ThemeStore.getDevice.subscribe((value) => {
     deviceType = value;
   });
@@ -104,7 +92,6 @@
   onMount(() => {
     handleResize();
     initializeTheme();
-    scrollToHash();
   });
 </script>
 

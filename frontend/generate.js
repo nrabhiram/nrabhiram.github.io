@@ -367,6 +367,46 @@ function createMasonryHeightScript() {
   `;
 }
 
+function createJumpHashScript() {
+  return `
+    <script>
+      // Prevent browser scroll restoration from interfering
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+
+      function scrollToHash() {
+        if (typeof window === 'undefined') return;
+        const hash = window.location.hash;
+        if (!hash) return;
+        const element = document.getElementById(hash.substring(1));
+        if (!element) return;
+
+        const scrollContainer = document.querySelector('.overflow-y-auto');
+
+        if (scrollContainer && window.innerWidth >= 1024) {
+          // Desktop: scroll the container div
+          const containerRect = scrollContainer.getBoundingClientRect();
+          const elementRect = element.getBoundingClientRect();
+          const scrollTop = scrollContainer.scrollTop;
+          const relativeTop = elementRect.top - containerRect.top;
+          const targetScroll = scrollTop + relativeTop;
+
+          scrollContainer.scrollTop = targetScroll;
+        } else {
+          // Mobile: scroll the window
+          const rect = element.getBoundingClientRect();
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          const elementTop = rect.top + scrollTop;
+
+          window.scrollTo(0, elementTop);
+        }
+      }
+      window.addEventListener('load', scrollToHash);
+    </script>
+  `
+}
+
 function getPageHTML(
   template,
   rendered,
@@ -376,7 +416,7 @@ function getPageHTML(
   snippetsPostResults = [],
   styleSheetPath = "",
 ) {
-  const { themeScript, dataScript, analyticsScript, metaTags, masonryScript } =
+  const { themeScript, dataScript, analyticsScript, metaTags, masonryScript, jumpHashScript } =
     scripts;
 
   let resultsSection = '<div class="posts">';
@@ -448,7 +488,7 @@ function getPageHTML(
     .replace("<!--app-theme-->", themeScript)
     .replace(
       "<!--app-head-->",
-      metaTags + (dataScript || "") + analyticsScript + (masonryScript || ""),
+      metaTags + (dataScript || "") + analyticsScript + (masonryScript || "") + jumpHashScript,
     )
     .replace("<!--app-html-->", rendered.html || "")
     .replace(
@@ -718,12 +758,13 @@ async function generateSite() {
       const analyticsScript = createAnalyticsScript();
       const masonryScript =
         url === "/snippets" ? createMasonryHeightScript() : "";
+      const jumpHashScript = createJumpHashScript();
       const metaTags = getPageMetaTags(artifact);
 
       const html = getPageHTML(
         template,
         rendered,
-        { themeScript, dataScript, analyticsScript, metaTags, masonryScript },
+        { themeScript, dataScript, analyticsScript, metaTags, masonryScript, jumpHashScript },
         content,
         blogPostResults,
         snippetsPostResults,

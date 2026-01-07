@@ -11,9 +11,9 @@
   export let primaryNavData: Link[];
   export let secondaryNavData: Link | null = null;
   export let url: string = "";
-  export let isSecondaryNavOpen: boolean = 
-    !!secondaryNavData && 
-    !!secondaryNavData.items && 
+  export let isSecondaryNavOpen: boolean =
+    !!secondaryNavData &&
+    !!secondaryNavData.items &&
     !!secondaryNavData.items.length &&
     !isBasePath(url);
   export let deviceType: string = '';
@@ -23,7 +23,7 @@
   function closeDrawer() {
     dispatch('closeDrawer');
   }
-  
+
   function toggleDrawer() {
     dispatch('toggleDrawer');
   }
@@ -31,17 +31,17 @@
   function openSecondaryDrawer() {
     isSecondaryNavOpen = true;
   }
-  
+
   function closeSecondaryDrawer() {
     isSecondaryNavOpen = false;
   }
 </script>
 
 {#if !deviceType || deviceType === 'mobile'}
-  <MobileNav 
+  <MobileNav
     isDrawerOpen={isMobileDrawerOpen}
-    primaryNavData={primaryNavData} 
-    secondaryNavData={secondaryNavData} 
+    primaryNavData={primaryNavData}
+    secondaryNavData={secondaryNavData}
     url={url}
     on:closeDrawer={closeDrawer}
     on:toggleDrawer={toggleDrawer}
@@ -54,9 +54,9 @@
     on:closeDrawer={closeDrawer}
     on:toggleDrawer={toggleDrawer}
     on:openSecondaryDrawer={openSecondaryDrawer}
-    on:closeSecondaryDrawer={closeSecondaryDrawer} 
-    primaryNavData={primaryNavData} 
-    secondaryNavData={secondaryNavData} 
+    on:closeSecondaryDrawer={closeSecondaryDrawer}
+    primaryNavData={primaryNavData}
+    secondaryNavData={secondaryNavData}
     disableDrawerAnim={disableDrawerAnim}
     url={url}
   />
