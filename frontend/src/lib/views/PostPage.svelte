@@ -47,7 +47,7 @@
   } {
     const casts = response.result.casts;
     const mainCast = casts.find((cast: any) => !cast.parentHash && cast.castType !== "root-embed");
-    
+
     if (!mainCast) return { allReplies: [], reactions: {} };
 
     const reactions = {
@@ -84,34 +84,68 @@
     if (typeof window === 'undefined') return;
     if (!tableOfContents.length) return;
 
-    observer = new IntersectionObserver((entries) => {
-      const visibleEntries = entries.filter(entry => entry.isIntersecting);
-      if (!visibleEntries.length) return;
-      visibleEntries.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-      
-      const topEntry = visibleEntries[0];
-      const id = topEntry.target.id;
+    // Find the scroll container
+    const scrollContainer = document.querySelector('.content-container');
 
-      if (headingId === id && tableOfContents.length === 1) {
-        const singleHeading = tableOfContents[0];
-        const headingEle = document.getElementById(singleHeading.id);
-        const rect = headingEle!.getBoundingClientRect();
-        const stillVisible = rect.top >= 0 && rect.top <= window.innerHeight;;
-        
-        if (!stillVisible) {
+    observer = new IntersectionObserver((entries) => {
+      const containerRect = (scrollContainer as Element).getBoundingClientRect();
+
+      // Find all headings that are currently in viewport (even partially)
+      const headingsInView = tableOfContents
+        .map(heading => {
+          const element = document.getElementById(heading.id);
+          if (!element) return null;
+          const rect = element.getBoundingClientRect();
+
+          // Check if any part of heading is visible
+          const isVisible = rect.bottom > containerRect.top && rect.top < containerRect.bottom;
+
+          return {
+            id: heading.id,
+            element,
+            rect,
+            isVisible,
+            // Distance from top of container (negative if above, positive if below)
+            distanceFromTop: rect.top - containerRect.top
+          };
+        })
+        .filter(h => h !== null && h.isVisible);
+
+      // If no headings visible at all, check if we're above all headings
+      if (headingsInView.length === 0) {
+        const allHeadingsBelow = tableOfContents.every(heading => {
+          const element = document.getElementById(heading.id);
+          if (!element) return false;
+          const rect = element.getBoundingClientRect();
+          return rect.top > containerRect.top;
+        });
+
+        if (allHeadingsBelow) {
           headingId = "";
         }
-
         return;
       }
 
-      if (id && tableOfContents.some(heading => heading.id == id)) {
-        headingId = id;
-      } else {
-        headingId = "";
+      // Find the heading that's at or just passed the top of the viewport
+      // Priority: heading closest to top, but prefer ones that have crossed the top
+      const sortedHeadings = headingsInView.sort((a, b) => {
+        if (a === null || b === null) return 0;
+        // If one is above top and one below, prefer the one above (already scrolled past)
+        if (a.distanceFromTop <= 0 && b.distanceFromTop > 0) return -1;
+        if (b.distanceFromTop <= 0 && a.distanceFromTop > 0) return 1;
+
+        // Both above or both below, pick closest to top
+        return Math.abs(a.distanceFromTop) - Math.abs(b.distanceFromTop);
+      });
+
+      const activeHeading = sortedHeadings[0];
+      if (activeHeading && tableOfContents.some(h => h.id === activeHeading.id)) {
+        headingId = activeHeading.id;
       }
     }, {
-      threshold: 0
+      root: scrollContainer as Element,
+      rootMargin: '0px 0px -20% 0px',
+      threshold: [0, 0.25, 0.5, 0.75, 1.0]
     });
 
     tableOfContents.forEach(heading => {
@@ -145,7 +179,7 @@
 
 <main>
   <div class="relative w-full flex lg:flex-row flex-col-reverse lg:gap-4">
-    <article 
+    <article
       class={cn(
         "w-full",
         tableOfContents.length > 0 && "lg:w-3/5"
@@ -168,7 +202,7 @@
             let:open
             let:toggle
           >
-            <button 
+            <button
               class="w-full flex items-center justify-between p-2 bg-vaxitas-secondary"
               on:click={toggle}
             >
@@ -188,8 +222,8 @@
             let:disableAnim
           >
             <AccordionContent
-              open={open} 
-              animDuration={animDuration} 
+              open={open}
+              animDuration={animDuration}
               disableAnim={disableAnim}
               className="overflow-hidden"
             >
@@ -197,7 +231,7 @@
                 <ul class="flex flex-col gap-1 list-none ml-0">
                   {#each tableOfContents as heading (heading.id)}
                     <li>
-                      <a 
+                      <a
                         href={`#${heading.id}`}
                         class={cn(
                           "no-underline text-vaxitas-secondary text-sm font-medium duration-100",
@@ -243,14 +277,14 @@
     {#if !loading}
       <div class="px-4">
         {#if replies.length > 0}
-          <a 
-            class="flex items-center gap-1 border-2 rounded-md border-vaxitas-secondary text-vaxitas-secondary px-2 py-1 ml-auto mb-2 no-underline w-max" 
+          <a
+            class="flex items-center gap-1 border-2 rounded-md border-vaxitas-secondary text-vaxitas-secondary px-2 py-1 ml-auto mb-2 no-underline w-max"
             href={`https://farcaster.xyz/vaxitas.eth/${artifact.castHash}`}
             target="_blank"
           >
-            <img 
-              src={isDarkMode ? '/farcaster-logo-dark.png' : '/farcaster-logo-light.png'} 
-              alt="Farcaster logo" 
+            <img
+              src={isDarkMode ? '/farcaster-logo-dark.png' : '/farcaster-logo-light.png'}
+              alt="Farcaster logo"
               class="w-6 h-6 m-0"
             />
             <span class="text-vaxitas-secondary text-sm hidden lg:inline">View on Farcaster</span>
@@ -261,15 +295,15 @@
         {/if}
         {#if replies.length === 0}
           <div class="text-center">
-            <img 
-              src={isDarkMode ? '/farcaster-logo-dark.png' : '/farcaster-logo-light.png'} 
-              alt="Farcaster logo" 
+            <img
+              src={isDarkMode ? '/farcaster-logo-dark.png' : '/farcaster-logo-light.png'}
+              alt="Farcaster logo"
               class="w-8 h-8"
             />
             <p class="text-vaxitas-secondary">
-              Like, recast, or reply to this post on 
-              <a 
-                href={`https://farcaster.xyz/vaxitas.eth/${artifact.castHash}`} 
+              Like, recast, or reply to this post on
+              <a
+                href={`https://farcaster.xyz/vaxitas.eth/${artifact.castHash}`}
                 target="_blank"
                 class="text-vaxitas-secondary"
               >
@@ -282,9 +316,9 @@
     {/if}
     {#if loading}
       <div class="px-4">
-        <img 
-          src={isDarkMode ? '/farcaster-logo-dark.png' : '/farcaster-logo-light.png'} 
-          alt="Farcaster logo" 
+        <img
+          src={isDarkMode ? '/farcaster-logo-dark.png' : '/farcaster-logo-light.png'}
+          alt="Farcaster logo"
           class="w-8 h-8 animate-pulse"
         />
       </div>

@@ -111,7 +111,7 @@
     disableDrawerAnim={disableDrawerAnim}
     url={url}
   />
-  <div class="w-full lg:h-screen overflow-y-auto custom-scrollbar">
+  <div class="w-full lg:h-screen overflow-y-auto custom-scrollbar content-container">
     <div class="w-full max-w-[1200px] px-4 lg:px-8 py-4 mx-auto">
       <header>
         <div class="flex items-center justify-between lg:justify-end">
