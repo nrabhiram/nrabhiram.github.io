@@ -3,6 +3,7 @@ title: Float Like Double Precision, Sting Like Square Root Computation
 summary: My program for computing square roots broke for extremely large and small numbers. I ended up exploring how numbers are represented in computers as a part of my solution. I thought it would be fun to write this up and share with my study partner.
 categories: programming, sicp
 date: 2025-12-31T10:59:00+05:30
+cast-hash: 0x87168c30
 ---
 
 Recently, [Ajinkya](https://www.shindebhau.com/) and I revived our [SICP](https://github.com/shindeajinkya/SICP-26) [runs](https://github.com/nrabhiram/sicp-exercises). One of my [predictions for the coming year](/predictions-for-2026) is that I'll finish this book. Although ambitious, I think that this is doable for at least the first 3 chapters[^1] if I don't spend exorbitant amounts of time marveling at the beauty of the prose, as I did previously.

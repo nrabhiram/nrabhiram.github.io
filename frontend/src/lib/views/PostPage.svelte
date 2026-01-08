@@ -52,7 +52,7 @@
 
     const reactions = {
       likes: mainCast.reactions.count,
-      recasts: mainCast.recasts.count,
+      recasts: mainCast.recasts.count + mainCast.quoteCount,
       comments: mainCast.replies.count,
     }
 
